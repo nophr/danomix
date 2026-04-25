@@ -73,6 +73,42 @@ function renderHoldingRows(holdings) {
   });
 }
 
+function renderMoves(moves) {
+  const host = document.getElementById("movesList");
+  host.innerHTML = "";
+  if (!moves.length) {
+    host.innerHTML = `<div class="pg-empty">No significant changes in the last 30 days.</div>`;
+    return;
+  }
+  moves.forEach(m => {
+    const chgClass = m.delta_pp >= 0 ? "chg-pos" : "chg-neg";
+    const sign = m.delta_pp >= 0 ? "+" : "";
+    let body = "";
+    if (m.type === "open") {
+      body = `Initiated a new position in <span class="sym">${m.display}</span> <span class="${chgClass}">(${m.to_pct.toFixed(1)}%)</span>`;
+    } else if (m.type === "close") {
+      body = `Fully exited <span class="sym">${m.display}</span>, previously held at ${m.from_pct.toFixed(1)}%`;
+    } else if (m.type === "add") {
+      body = `Added to <span class="sym">${m.display}</span>, allocation moved from ${m.from_pct.toFixed(1)}% to ${m.to_pct.toFixed(1)}% <span class="${chgClass}">(${sign}${m.delta_pp.toFixed(1)}pp)</span>`;
+    } else {  // trim
+      body = `Trimmed <span class="sym">${m.display}</span>, allocation moved from ${m.from_pct.toFixed(1)}% to ${m.to_pct.toFixed(1)}% <span class="${chgClass}">(${m.delta_pp.toFixed(1)}pp)</span>`;
+    }
+    const row = document.createElement("div");
+    row.className = "pg-move";
+    row.innerHTML = `
+      <div class="pg-move-icon m-${m.type}">${MOVE_ICON[m.type]}</div>
+      <div class="pg-move-body">
+        <div class="pg-move-head">
+          <span class="pg-move-action">${MOVE_LABEL[m.type]}</span>
+          <span class="pg-move-time">${formatDateLong(m.date)}</span>
+        </div>
+        <div class="pg-move-text">${body}</div>
+      </div>
+    `;
+    host.appendChild(row);
+  });
+}
+
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   document.getElementById("themeToggle").textContent = theme === "dark" ? "☾" : "☀";
@@ -200,6 +236,7 @@ async function main() {
   renderHero(snap, "all");
   renderDonut(snap.holdings);
   renderHoldingRows(snap.holdings);
+  renderMoves(snap.recent_moves);
   setupRangeTabs(snap);
 
   window._snap = snap;

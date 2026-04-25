@@ -6348,5 +6348,42 @@
       ]
     }
   },
-  "recent_moves": []
+  "recent_moves": [
+    {
+      "date": "2026-04-20",
+      "type": "open",
+      "symbol": "NVDA",
+      "display": "NVDA",
+      "delta_pp": 3.5,
+      "from_pct": 0,
+      "to_pct": 3.5
+    },
+    {
+      "date": "2026-04-16",
+      "type": "add",
+      "symbol": "AAPL",
+      "display": "AAPL",
+      "delta_pp": 2.1,
+      "from_pct": 29.9,
+      "to_pct": 32.0
+    },
+    {
+      "date": "2026-04-09",
+      "type": "trim",
+      "symbol": "GOOGL",
+      "display": "GOOGL",
+      "delta_pp": -1.4,
+      "from_pct": 14.4,
+      "to_pct": 13.0
+    },
+    {
+      "date": "2026-04-02",
+      "type": "close",
+      "symbol": "TSLA",
+      "display": "TSLA",
+      "delta_pp": -6.2,
+      "from_pct": 6.2,
+      "to_pct": 0.0
+    }
+  ]
 }
