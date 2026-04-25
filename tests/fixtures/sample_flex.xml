@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexQueryResponse queryName="Test" type="AF">
+<FlexStatements count="1">
+<FlexStatement accountId="U0000000" fromDate="2024-01-02" toDate="2024-12-31" period="Last365CalendarDays" whenGenerated="2024-12-31;000000 UTC">
+<EquitySummaryInBase>
+<EquitySummaryByReportDateInBase reportDate="2024-01-02" total="100000" totalLong="100000" totalShort="0" />
+<EquitySummaryByReportDateInBase reportDate="2024-06-03" total="110000" totalLong="130000" totalShort="-20000" />
+<EquitySummaryByReportDateInBase reportDate="2024-12-31" total="120000" totalLong="150000" totalShort="-30000" />
+</EquitySummaryInBase>
+<OpenPositions>
+<OpenPosition symbol="AAPL" assetCategory="STK" position="100" positionValue="30000" currency="USD" />
+<OpenPosition symbol="MSFT" assetCategory="STK" position="50" positionValue="20000" currency="USD" />
+<OpenPosition symbol="LUMN  270115C00010000" assetCategory="OPT" position="25" positionValue="5000" currency="USD" />
+</OpenPositions>
+</FlexStatement>
+</FlexStatements>
+</FlexQueryResponse>

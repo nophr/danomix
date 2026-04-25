@@ -1,0 +1,9 @@
+[project]
+name = "danomix-portfolio"
+version = "0.1.0"
+description = "Public IBKR portfolio dashboard for danomix.com"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
