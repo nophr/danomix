@@ -88,6 +88,108 @@ function setupThemeToggle() {
   });
 }
 
+function buildChartSeries(snap) {
+  const pf = snap.performance.portfolio;
+  const bm = snap.performance.benchmark.series;
+  const bmByDate = new Map(bm.map(p => [p.date, p.return_pct]));
+
+  const timestamps = pf.map(p => new Date(p.date + "T00:00:00Z").getTime() / 1000);
+  const portfolioPct = pf.map(p => p.return_pct);
+  const benchmarkPct = pf.map(p => bmByDate.has(p.date) ? bmByDate.get(p.date) : null);
+  return [timestamps, portfolioPct, benchmarkPct];
+}
+
+function filterByRange(series, range) {
+  const [ts, pf, bm] = series;
+  if (range === "all") return series;
+  const now = ts[ts.length - 1];
+  const cutoff =
+    range === "ytd" ? new Date(Date.UTC(new Date().getUTCFullYear(), 0, 1)).getTime() / 1000 :
+    range === "1y"  ? now - 365 * 24 * 3600 :
+    range === "3y"  ? now - 3 * 365 * 24 * 3600 : 0;
+  const idx = ts.findIndex(t => t >= cutoff);
+  if (idx <= 0) return series;
+  return [ts.slice(idx), pf.slice(idx), bm.slice(idx)];
+}
+
+let chartInstance = null;
+
+function renderChart(series) {
+  const host = document.getElementById("perfChart");
+  host.innerHTML = "";
+
+  const { width, height } = host.getBoundingClientRect();
+  const opts = {
+    width: Math.max(300, width),
+    height: Math.max(180, height),
+    padding: [8, 4, 4, 4],
+    scales: { x: { time: true } },
+    axes: [
+      { stroke: "#6e6792", grid: { stroke: "rgba(255,255,255,0.04)" } },
+      {
+        stroke: "#6e6792",
+        grid: { stroke: "rgba(255,255,255,0.04)" },
+        values: (_, ticks) => ticks.map(v => (v >= 0 ? "+" : "") + v.toFixed(0) + "%"),
+      },
+    ],
+    series: [
+      {},
+      {
+        label: "Portfolio",
+        stroke: "#8a5bff",
+        width: 2.5,
+        fill: "rgba(138,91,255,0.15)",
+        points: { show: false },
+      },
+      {
+        label: "S&P 500",
+        stroke: "#4ad6ff",
+        width: 2,
+        dash: [4, 4],
+        points: { show: false },
+      },
+    ],
+    legend: { show: false },
+  };
+
+  chartInstance = new uPlot(opts, series, host);
+}
+
+function renderHero(snap, range) {
+  const pf = snap.performance.portfolio;
+  const bm = snap.performance.benchmark.series;
+  const now = pf[pf.length - 1];
+  document.getElementById("returnBig").textContent =
+    (now.return_pct >= 0 ? "+" : "") + now.return_pct.toFixed(1) + "%";
+
+  const bmNow = bm[bm.length - 1];
+  if (bmNow) {
+    const out = (now.return_pct - bmNow.return_pct).toFixed(1);
+    document.getElementById("returnSub").innerHTML =
+      `S&amp;P 500 <span class="pg-delta">${bmNow.return_pct >= 0 ? "+" : ""}${bmNow.return_pct.toFixed(1)}%</span> · ` +
+      `Outperformance <span class="pg-delta">${out >= 0 ? "+" : ""}${out} pp</span>`;
+  }
+}
+
+function setupRangeTabs(snap) {
+  const series = buildChartSeries(snap);
+  document.querySelectorAll("#ranges .pg-range").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#ranges .pg-range").forEach(b => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      const filtered = filterByRange(series, btn.dataset.range);
+      renderChart(filtered);
+    });
+  });
+  renderChart(series);
+  window.addEventListener("resize", () => {
+    if (!chartInstance) return;
+    const host = document.getElementById("perfChart");
+    const { width } = host.getBoundingClientRect();
+    chartInstance.setSize({ width: Math.max(300, width), height: chartInstance.height });
+  });
+}
+
 async function main() {
   setupThemeToggle();
   const res = await fetch("/data/snapshot.json", { cache: "no-cache" });
@@ -95,10 +197,12 @@ async function main() {
   const snap = await res.json();
 
   renderHeaderChips(snap);
+  renderHero(snap, "all");
   renderDonut(snap.holdings);
   renderHoldingRows(snap.holdings);
+  setupRangeTabs(snap);
 
-  window._snap = snap;  // expose for later tasks
+  window._snap = snap;
 }
 
 main().catch(err => {
