@@ -11,6 +11,7 @@ venv/
 Thumbs.db
 .vscode/
 .idea/
+.claude/
 
 # Superpowers brainstorm cache
 .superpowers/
