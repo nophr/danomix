@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Danomix · Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/vendor/uPlot.min.css" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header class="pg-header">
+      <div class="pg-brand">
+        <svg width="28" height="28" viewBox="0 0 40 40" aria-hidden="true">
+          <defs><linearGradient id="brandG" x1="0" x2="1" y1="1" y2="0">
+            <stop offset="0%" stop-color="#8a5bff"/><stop offset="100%" stop-color="#4ad6ff"/>
+          </linearGradient></defs>
+          <rect x="6"  y="22" width="6" height="12" rx="2" fill="url(#brandG)" opacity="0.55"/>
+          <rect x="16" y="14" width="6" height="20" rx="2" fill="url(#brandG)" opacity="0.8"/>
+          <rect x="26" y="6"  width="6" height="28" rx="2" fill="url(#brandG)"/>
+        </svg>
+        <span>Danomix</span>
+      </div>
+      <div class="pg-header-right">
+        <span class="pg-chip pg-chip--ok" id="chipUpdated">● Loading…</span>
+        <span class="pg-chip pg-chip--muted" id="chipLeverage">Leverage —</span>
+        <button class="pg-toggle" id="themeToggle" type="button" aria-label="Toggle theme">☾</button>
+      </div>
+    </header>
+
+    <section class="pg-hero">
+      <div class="pg-hero-top">
+        <div>
+          <div class="pg-eyebrow">All-Time Return · Since Inception</div>
+          <div class="pg-bignum" id="returnBig">—</div>
+          <div class="pg-bignum-sub" id="returnSub">&nbsp;</div>
+        </div>
+        <div class="pg-ranges" id="ranges" role="tablist">
+          <button class="pg-range" data-range="ytd"  role="tab">YTD</button>
+          <button class="pg-range" data-range="1y"   role="tab">1Y</button>
+          <button class="pg-range" data-range="3y"   role="tab">3Y</button>
+          <button class="pg-range is-active" data-range="all" role="tab">All</button>
+        </div>
+      </div>
+      <div class="pg-chart" id="perfChart"></div>
+      <div class="pg-legend">
+        <span><span class="dot" style="background:linear-gradient(90deg,#8a5bff,#4ad6ff)"></span>Portfolio</span>
+        <span><span class="dot" style="background:#4ad6ff;opacity:.6"></span>S&amp;P 500</span>
+      </div>
+    </section>
+
+    <div class="pg-section-title"><h3>Current Holdings</h3><span class="hint">Percent of portfolio</span></div>
+    <section class="pg-holdings">
+      <div class="pg-donut-wrap">
+        <div class="pg-donut" id="donut" style="background: conic-gradient(#333 0 100%)">
+          <div class="pg-donut-center">
+            <div class="pg-donut-count" id="holdingCount">—</div>
+            <div class="pg-donut-label">Holdings</div>
+          </div>
+        </div>
+      </div>
+      <div class="pg-rows" id="holdingRows"></div>
+    </section>
+
+    <div class="pg-section-title"><h3>Recent Activity</h3><span class="hint">Last 30 days · Changes of 0.5pp or more</span></div>
+    <section class="pg-moves" id="movesList">
+      <div class="pg-empty">Loading…</div>
+    </section>
+
+    <footer class="pg-footer">
+      <span>Data source: Interactive Brokers · End-of-day snapshot</span>
+      <span>For informational purposes only. Not investment advice. Past performance is not indicative of future results.</span>
+    </footer>
+
+  </div>
+
+  <script src="/vendor/uPlot.iife.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
