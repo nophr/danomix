@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "updated_at": "2026-04-23",
+  "inception_date": "2023-04-18",
+  "nav": { "leverage": 1.83 },
+  "holdings": [
+    { "symbol": "AAPL", "display": "AAPL", "asset_class": "STK", "percent": 32.0 },
+    { "symbol": "MSFT", "display": "MSFT", "asset_class": "STK", "percent": 22.0 },
+    { "symbol": "NVDA", "display": "NVDA", "asset_class": "STK", "percent": 18.0 },
+    { "symbol": "GOOGL", "display": "GOOGL", "asset_class": "STK", "percent": 13.0 },
+    { "symbol": "META", "display": "META", "asset_class": "STK", "percent": 10.0 },
+    { "symbol": "Cash", "display": "Cash", "asset_class": "CASH", "percent": 5.0 }
+  ],
+  "performance": {
+    "portfolio": [{ "date": "2023-04-18", "return_pct": 0 }, { "date": "2026-04-22", "return_pct": 187.4 }],
+    "benchmark": { "ticker": "SPY", "series": [{ "date": "2023-04-18", "return_pct": 0 }, { "date": "2026-04-22", "return_pct": 74.9 }] }
+  },
+  "recent_moves": []
+}
