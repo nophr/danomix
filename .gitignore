@@ -15,3 +15,6 @@ Thumbs.db
 
 # Superpowers brainstorm cache
 .superpowers/
+
+# Raw dollar NAV — local-only artifact; never commit to a public repo
+data/nav_history.json

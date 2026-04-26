@@ -1,5 +1,12 @@
 import json
-from scripts.nav_history import load, append_new, to_performance_series
+import pytest
+
+from scripts.nav_history import (
+    append_new,
+    extend_pct,
+    load,
+    to_performance_series,
+)
 
 
 def test_load_missing_returns_empty(tmp_path):
@@ -37,3 +44,88 @@ def test_to_performance_series_normalizes_to_inception():
     assert series[0] == {"date": "2024-01-02", "return_pct": 0.0}
     assert series[1]["return_pct"] == 10.0
     assert series[2]["return_pct"] == 20.0
+
+
+def test_extend_pct_bootstraps_when_existing_empty():
+    new_dollars = [
+        {"date": "2024-01-02", "total": 100.0},
+        {"date": "2024-06-03", "total": 110.0},
+        {"date": "2024-12-31", "total": 120.0},
+    ]
+    out = extend_pct([], new_dollars)
+    assert out == [
+        {"date": "2024-01-02", "return_pct": 0.0},
+        {"date": "2024-06-03", "return_pct": 10.0},
+        {"date": "2024-12-31", "return_pct": 20.0},
+    ]
+
+
+def test_extend_pct_chains_new_dates_via_overlap_anchor():
+    existing = [
+        {"date": "2024-01-02", "return_pct": 0.0},
+        {"date": "2024-06-03", "return_pct": 10.0},  # implied $110 if base=$100
+    ]
+    new_dollars = [
+        {"date": "2024-06-03", "total": 220.0},   # anchor (different scale; value irrelevant)
+        {"date": "2024-12-31", "total": 242.0},   # +10% from anchor in dollar space
+    ]
+    out = extend_pct(existing, new_dollars)
+    assert len(out) == 3
+    assert out[2]["date"] == "2024-12-31"
+    # 1.10 (existing pct at anchor) * 242/220 = 1.21 → 21%
+    assert out[2]["return_pct"] == 21.0
+
+
+def test_extend_pct_preserves_existing_pct_unchanged():
+    existing = [
+        {"date": "2024-01-02", "return_pct": 0.0},
+        {"date": "2024-06-03", "return_pct": 10.0},
+    ]
+    # Even if dollar series implies a different historical pct, existing values must not move.
+    new_dollars = [
+        {"date": "2024-01-02", "total": 999.0},   # would imply different ratio
+        {"date": "2024-06-03", "total": 1100.0},
+        {"date": "2024-12-31", "total": 1210.0},
+    ]
+    out = extend_pct(existing, new_dollars)
+    assert out[0] == {"date": "2024-01-02", "return_pct": 0.0}
+    assert out[1] == {"date": "2024-06-03", "return_pct": 10.0}
+
+
+def test_extend_pct_no_new_dates_is_noop():
+    existing = [
+        {"date": "2024-01-02", "return_pct": 0.0},
+        {"date": "2024-06-03", "return_pct": 10.0},
+    ]
+    new_dollars = [
+        {"date": "2024-01-02", "total": 100.0},
+        {"date": "2024-06-03", "total": 110.0},
+    ]
+    out = extend_pct(existing, new_dollars)
+    assert out == existing
+
+
+def test_extend_pct_raises_when_no_overlap_for_chain():
+    existing = [{"date": "2024-01-02", "return_pct": 0.0}]
+    new_dollars = [{"date": "2025-06-01", "total": 100.0}]  # no shared date
+    with pytest.raises(ValueError, match="no overlap"):
+        extend_pct(existing, new_dollars)
+
+
+def test_extend_pct_ignores_dates_before_existing_inception():
+    # We never extend backwards; only forward.
+    existing = [
+        {"date": "2024-06-03", "return_pct": 0.0},
+        {"date": "2024-12-31", "return_pct": 10.0},
+    ]
+    new_dollars = [
+        {"date": "2024-01-02", "total": 90.0},    # earlier than existing — must be ignored
+        {"date": "2024-06-03", "total": 100.0},
+        {"date": "2024-12-31", "total": 110.0},
+        {"date": "2025-03-01", "total": 121.0},   # new — should be appended
+    ]
+    out = extend_pct(existing, new_dollars)
+    dates = [r["date"] for r in out]
+    assert dates == ["2024-06-03", "2024-12-31", "2025-03-01"]
+    # 1.10 * 121/110 = 1.21 → 21%
+    assert out[-1]["return_pct"] == 21.0

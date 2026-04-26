@@ -2,11 +2,15 @@
 
 Pipeline:
   1. Call Flex (SendRequest + GetStatement) for the latest XML.
-  2. Parse it into {positions, nav}.
-  3. Merge new NAV rows into the persistent ledger.
+  2. Parse it into {positions, nav (dollars)}.
+  3. Chain-extend the persistent pct series with any new dates (dollars stay in memory).
   4. Refresh SPY benchmark from Stooq (fallback: reuse committed cache).
   5. Build public snapshot.json (percentages only, no identifiers).
-  6. Atomically write data/snapshot.json + data/nav_history.json + data/benchmark_history.json.
+  6. Atomically write data/snapshot.json + data/nav_history_pct.json + data/benchmark_history.json.
+
+Public repo safety: dollar NAV values are never persisted to disk — only the
+return_pct series is committed. data/nav_history.json (dollars) stays gitignored
+and is written purely as a local-only artifact for personal analysis.
 
 Entrypoint: python -m scripts.fetch_snapshot
 """
@@ -22,23 +26,21 @@ from pathlib import Path
 from scripts import flex, parse, transform, nav_history, moves, benchmark
 
 DATA = Path("data")
-SNAPSHOT_PATH   = DATA / "snapshot.json"
-NAV_PATH        = DATA / "nav_history.json"
-BENCHMARK_PATH  = DATA / "benchmark_history.json"
+SNAPSHOT_PATH       = DATA / "snapshot.json"
+NAV_PCT_PATH        = DATA / "nav_history_pct.json"   # committed (pct only)
+NAV_DOLLARS_PATH    = DATA / "nav_history.json"       # gitignored (local only)
+BENCHMARK_PATH      = DATA / "benchmark_history.json"
 
 VERSION = 1
 
 
-def build_snapshot(*, flex_xml: str, nav_ledger: list[dict], spy_series: list[dict],
-                   prior_holdings: list[dict], today: str) -> dict:
+def build_snapshot(*, flex_xml: str, pct_series: list[dict], latest_nav: dict,
+                   spy_series: list[dict], prior_holdings: list[dict], today: str) -> dict:
     parsed = parse.parse_flex_xml(flex_xml)
     holdings = transform.build_holdings(parsed["positions"])
 
-    latest_nav = nav_ledger[-1]
     leverage = transform.compute_leverage(latest_nav)
-
-    perf_portfolio = nav_history.to_performance_series(nav_ledger)
-    inception = nav_ledger[0]["date"]
+    inception = pct_series[0]["date"]
 
     recent = moves.classify_moves(holdings, prior_holdings, as_of=today)
 
@@ -49,7 +51,7 @@ def build_snapshot(*, flex_xml: str, nav_ledger: list[dict], spy_series: list[di
         "nav":            {"leverage": leverage},
         "holdings":       holdings,
         "performance": {
-            "portfolio": perf_portfolio,
+            "portfolio": pct_series,
             "benchmark": {"ticker": "SPY", "series": spy_series},
         },
         "recent_moves": recent,
@@ -94,18 +96,27 @@ def main() -> int:
 
     DATA.mkdir(exist_ok=True)
 
-    # 1+2. Flex → XML → parsed
+    # 1+2. Flex → XML → parsed (dollars live in memory only from here)
     ref = flex.request_statement(token=token, query_id=query_id)
     xml_bytes = flex.fetch_statement(token=token, ref_code=ref)
     parsed = parse.parse_flex_xml(xml_bytes.decode("utf-8"))
+    if not parsed["nav"]:
+        print("error: Flex response had no NAV rows", file=sys.stderr)
+        return 1
+    latest_nav = parsed["nav"][-1]
 
-    # 3. Merge NAV into ledger
-    existing_nav = nav_history.load(NAV_PATH)
-    merged_nav = nav_history.append_new(existing_nav, parsed["nav"])
-    nav_history.save(NAV_PATH, merged_nav)
+    # 3. Chain-extend the public pct series — only new dates get computed
+    existing_pct = nav_history.load(NAV_PCT_PATH)
+    merged_pct = nav_history.extend_pct(existing_pct, parsed["nav"])
+    nav_history.save(NAV_PCT_PATH, merged_pct)
+
+    # Local-only dollar mirror for personal analysis (gitignored)
+    existing_dollars = nav_history.load(NAV_DOLLARS_PATH)
+    merged_dollars = nav_history.append_new(existing_dollars, parsed["nav"])
+    nav_history.save(NAV_DOLLARS_PATH, merged_dollars)
 
     # 4. Benchmark — resilient to Stooq outage
-    inception = merged_nav[0]["date"]
+    inception = merged_pct[0]["date"]
     try:
         closes = benchmark.fetch_spy_closes()
         if BENCHMARK_PATH.exists():
@@ -128,7 +139,8 @@ def main() -> int:
     today = date.today().isoformat()
     snap = build_snapshot(
         flex_xml=xml_bytes.decode("utf-8"),
-        nav_ledger=merged_nav,
+        pct_series=merged_pct,
+        latest_nav=latest_nav,
         spy_series=spy_series,
         prior_holdings=prior_holdings,
         today=today,
