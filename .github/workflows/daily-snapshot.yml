@@ -3,7 +3,7 @@ name: Daily Portfolio Snapshot
 on:
   schedule:
     - cron: "30 21 * * 1-5"   # 21:30 UTC Mon–Fri (post US close)
-  workflow_dispatch:           # manual run button
+  workflow_dispatch:           # manual trigger
 
 permissions:
   contents: write
