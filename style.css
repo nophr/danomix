@@ -129,6 +129,12 @@ body {
 
 .pg-footer { margin-top: 28px; font-size: 10px; color: var(--text-muted); display: flex; flex-direction: column; gap: 6px; }
 
+/* ----- Narrow viewport: header chips wrap to a second row ----- */
+@media (max-width: 600px) {
+  .pg-header        { flex-wrap: wrap; row-gap: 10px; }
+  .pg-header-right  { flex-wrap: wrap; row-gap: 6px; }
+}
+
 /* ----- Responsive (≥720px) ----- */
 @container (min-width: 720px) {
   .container   { padding: 28px 36px 80px; }
