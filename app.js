@@ -228,7 +228,7 @@ function setupRangeTabs(snap) {
 
 async function main() {
   setupThemeToggle();
-  const res = await fetch("/data/snapshot.json", { cache: "no-cache" });
+  const res = await fetch("data/snapshot.json", { cache: "no-cache" });
   if (!res.ok) throw new Error("snapshot.json not available: " + res.status);
   const snap = await res.json();
 
