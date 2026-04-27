@@ -21,7 +21,18 @@
   --text-primary:   #0b0720;
   --text-secondary: #4b446b;
   --text-muted:     #8a84a8;
+  /* Semantics designed for legibility on white. */
+  --positive: #16803c;
+  --negative: #b45309;
 }
+
+[data-theme="light"] .pg-bignum {
+  /* Dark-mode gradient ends in pale green which vanishes on white. */
+  background: linear-gradient(90deg, var(--text-primary), #5b34d6 60%, var(--positive));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+[data-theme="light"] .m-add   { color: #1d6fb0; border-color: rgba(29,111,176,.25); background: rgba(29,111,176,.10); }
+[data-theme="light"] .m-close { color: #b3267a; border-color: rgba(179,38,122,.25); background: rgba(179,38,122,.10); }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
