@@ -63,9 +63,16 @@ body {
 .pg-range  { font-size: 10px; padding: 6px 10px; border-radius: 7px; color: var(--text-secondary); cursor: pointer; background: transparent; border: 0; font-family: inherit; }
 .pg-range.is-active { background: linear-gradient(135deg, rgba(138,91,255,.35), rgba(74,214,255,.25)); color: #fff; }
 
-.pg-chart { width: 100%; height: 200px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+.pg-chart { width: 100%; height: 200px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px; position: relative; }
 .pg-legend { display: flex; gap: 16px; margin-top: 10px; font-size: 11px; color: var(--text-secondary); flex-wrap: wrap; }
 .pg-legend .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+
+.pg-chart-tip { position: absolute; pointer-events: none; display: none; transform: translate(-50%, calc(-100% - 10px)); background: rgba(11, 7, 32, 0.92); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: 11px; line-height: 1.5; color: var(--text-primary); white-space: nowrap; z-index: 5; backdrop-filter: blur(6px); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4); }
+[data-theme="light"] .pg-chart-tip { background: rgba(255, 255, 255, 0.96); }
+.pg-chart-tip-date { color: var(--text-secondary); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 4px; }
+.pg-chart-tip-row  { display: flex; align-items: center; gap: 8px; }
+.pg-chart-tip-row .dot { display: inline-block; width: 8px; height: 8px; border-radius: 2px; }
+.pg-chart-tip-row strong { margin-left: auto; padding-left: 16px; font-weight: 600; color: var(--text-primary); }
 
 /* ----- Section heads ----- */
 .pg-section-title { display: flex; justify-content: space-between; align-items: baseline; margin: 28px 0 10px; gap: 10px; flex-wrap: wrap; }

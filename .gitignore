@@ -18,3 +18,6 @@ Thumbs.db
 
 # Raw dollar NAV — local-only artifact; never commit to a public repo
 data/nav_history.json
+# Historical Flex XMLs used by scripts/backfill_nav.py — contain dollar NAV, never commit
+backfill/
+.gstack/

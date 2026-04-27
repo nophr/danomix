@@ -154,10 +154,20 @@ function renderChart(series) {
   const host = document.getElementById("perfChart");
   host.innerHTML = "";
 
-  const { width, height } = host.getBoundingClientRect();
+  const tooltip = document.createElement("div");
+  tooltip.className = "pg-chart-tip";
+  host.appendChild(tooltip);
+
+  const fmtPct = v => v == null ? "—" : (v >= 0 ? "+" : "") + v.toFixed(2) + "%";
+  const fmtDate = ts => new Date(ts * 1000).toLocaleDateString("en-US",
+    { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
+
+  const cs = getComputedStyle(host);
+  const px = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
+  const py = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
   const opts = {
-    width: Math.max(300, width),
-    height: Math.max(180, height),
+    width: Math.max(300, host.clientWidth - px),
+    height: Math.max(180, host.clientHeight - py),
     padding: [8, 4, 4, 4],
     scales: { x: { time: true } },
     axes: [
@@ -187,6 +197,27 @@ function renderChart(series) {
       },
     ],
     legend: { show: false },
+    cursor: { y: false },
+    plugins: [{
+      hooks: {
+        setCursor: (u) => {
+          const idx = u.cursor.idx;
+          if (idx == null) { tooltip.style.display = "none"; return; }
+          const ts = u.data[0][idx], pf = u.data[1][idx], bm = u.data[2][idx];
+          tooltip.innerHTML =
+            `<div class="pg-chart-tip-date">${fmtDate(ts)}</div>` +
+            `<div class="pg-chart-tip-row"><span class="dot" style="background:#8a5bff"></span>Portfolio<strong>${fmtPct(pf)}</strong></div>` +
+            `<div class="pg-chart-tip-row"><span class="dot" style="background:#4ad6ff"></span>S&amp;P 500<strong>${fmtPct(bm)}</strong></div>`;
+          tooltip.style.display = "block";
+          const halfW = tooltip.offsetWidth / 2;
+          let left = u.cursor.left;
+          if (left - halfW < 4) left = halfW + 4;
+          else if (left + halfW > host.clientWidth - 4) left = host.clientWidth - halfW - 4;
+          tooltip.style.left = left + "px";
+          tooltip.style.top = Math.max(20, u.cursor.top) + "px";
+        },
+      },
+    }],
   };
 
   chartInstance = new uPlot(opts, series, host);
@@ -222,8 +253,9 @@ function setupRangeTabs(snap) {
   window.addEventListener("resize", () => {
     if (!chartInstance) return;
     const host = document.getElementById("perfChart");
-    const { width } = host.getBoundingClientRect();
-    chartInstance.setSize({ width: Math.max(300, width), height: chartInstance.height });
+    const cs = getComputedStyle(host);
+    const px = parseFloat(cs.paddingLeft) + parseFloat(cs.paddingRight);
+    chartInstance.setSize({ width: Math.max(300, host.clientWidth - px), height: chartInstance.height });
   });
 }
 
