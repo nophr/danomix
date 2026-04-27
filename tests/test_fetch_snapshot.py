@@ -36,7 +36,7 @@ def test_build_snapshot_privacy_properties():
     assert "150000" not in serialized            # latest dollar NAV stays in memory only
     assert "120000" not in serialized            # latest dollar NAV stays in memory only
 
-    assert snap["nav"]["leverage"] == 1.25
+    assert snap["nav"]["leverage"] == 1.5  # gross: (150k - (-30k)) / 120k
     assert abs(sum(h["percent"] for h in snap["holdings"]) - 100.0) < 0.01
     assert snap["performance"]["benchmark"]["ticker"] == "SPY"
     assert snap["performance"]["portfolio"] == pct_series

@@ -39,4 +39,12 @@ def build_holdings(positions: list[dict]) -> list[dict]:
 
 
 def compute_leverage(latest_nav: dict) -> float:
-    return round(latest_nav["total_long"] / latest_nav["total"], 2)
+    """Gross leverage: (long_exposure + short_exposure_magnitude) / equity.
+
+    total_short is stored as a negative number, so subtracting it adds the
+    magnitude. This is the more honest framing of total risk than long-only
+    leverage, since short positions also consume buying power and contribute
+    to portfolio P&L.
+    """
+    gross_exposure = latest_nav["total_long"] - latest_nav["total_short"]
+    return round(gross_exposure / latest_nav["total"], 2)

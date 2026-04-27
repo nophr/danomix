@@ -42,7 +42,16 @@ def test_no_dollar_values_in_output():
         assert "position" not in h  # (share count)
 
 
-def test_compute_leverage():
+def test_compute_leverage_gross():
+    """Gross leverage = (total_long + |total_short|) / total.
+    Fixture: total_long=150000, total_short=-30000, total=120000
+    → (150000 - (-30000)) / 120000 = 1.5"""
     parsed = parse_flex_xml(read_fixture("sample_flex.xml"))
     latest = parsed["nav"][-1]
-    assert compute_leverage(latest) == 1.25
+    assert compute_leverage(latest) == 1.5
+
+
+def test_compute_leverage_no_shorts():
+    """With zero short exposure, gross leverage equals long-only leverage."""
+    nav = {"total": 100000.0, "total_long": 120000.0, "total_short": 0.0}
+    assert compute_leverage(nav) == 1.2
