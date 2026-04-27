@@ -33,3 +33,32 @@ def test_preserves_option_symbol_verbatim():
     opts = [p for p in result["positions"] if p["asset_category"] == "OPT"]
     assert len(opts) == 1
     assert opts[0]["symbol"] == "LUMN  270115C00010000"
+
+
+def test_cashflows_extracted_for_deposits_and_withdrawals():
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+<FlexQueryResponse><FlexStatements><FlexStatement>
+<CashTransactions>
+<CashTransaction reportDate="2024-03-15" amount="10000" type="Deposits/Withdrawals" />
+<CashTransaction reportDate="2024-04-10" amount="-2500" type="Deposits/Withdrawals" />
+<CashTransaction reportDate="2024-05-01" amount="-9.95" type="Other Fees" />
+<CashTransaction reportDate="2024-05-02" amount="42.50" type="Dividends" />
+<CashTransaction reportDate="2024-05-03" amount="500" type="Internal Transfers" />
+</CashTransactions>
+</FlexStatement></FlexStatements></FlexQueryResponse>"""
+    result = parse_flex_xml(xml)
+    cashflows = result["cashflows"]
+    # Only Deposits/Withdrawals + Internal Transfers are external cashflows for TWR.
+    # Fees and dividends are NOT external — they're internal P&L and stay in NAV.
+    assert len(cashflows) == 3
+    types = {c["type"] for c in cashflows}
+    assert types == {"Deposits/Withdrawals", "Internal Transfers"}
+    # signs: positive = deposit, negative = withdrawal
+    deps = [c for c in cashflows if c["type"] == "Deposits/Withdrawals"]
+    assert sum(c["amount"] for c in deps) == 10000 - 2500
+
+
+def test_cashflows_empty_when_section_absent():
+    # Existing fixture has no CashTransactions section; result must be empty list (not error).
+    result = parse_flex_xml(read_fixture("sample_flex.xml"))
+    assert result["cashflows"] == []

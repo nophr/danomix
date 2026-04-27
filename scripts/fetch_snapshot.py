@@ -112,9 +112,11 @@ def main() -> int:
         return 1
     latest_nav = parsed["nav"][-1]
 
-    # 3. Chain-extend the public pct series — only new dates get computed
+    # 3. Chain-extend the public TWR pct series — only new dates get computed.
+    # External cashflows (deposits/withdrawals) are subtracted before computing
+    # the daily return so contributions don't masquerade as performance.
     existing_pct = nav_history.load(NAV_PCT_PATH)
-    merged_pct = nav_history.extend_pct(existing_pct, parsed["nav"])
+    merged_pct = nav_history.extend_twr(existing_pct, parsed["nav"], parsed.get("cashflows", []))
     nav_history.save(NAV_PCT_PATH, merged_pct)
 
     # Local-only dollar mirror for personal analysis (gitignored)
