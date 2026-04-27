@@ -1,0 +1,2380 @@
+{
+  "version": 1,
+  "updated_at": "2026-04-27",
+  "inception_date": "2025-04-24",
+  "nav": {
+    "leverage": 1.81
+  },
+  "holdings": [
+    {
+      "symbol": "GOOGL",
+      "display": "GOOGL",
+      "asset_class": "STK",
+      "percent": 18.57
+    },
+    {
+      "symbol": "AMD",
+      "display": "AMD",
+      "asset_class": "STK",
+      "percent": 10.29
+    },
+    {
+      "symbol": "META",
+      "display": "META",
+      "asset_class": "STK",
+      "percent": 9.98
+    },
+    {
+      "symbol": "AMZN",
+      "display": "AMZN",
+      "asset_class": "STK",
+      "percent": 9.18
+    },
+    {
+      "symbol": "MSFT",
+      "display": "MSFT",
+      "asset_class": "STK",
+      "percent": 8.13
+    },
+    {
+      "symbol": "NVDA",
+      "display": "NVDA",
+      "asset_class": "STK",
+      "percent": 7.25
+    },
+    {
+      "symbol": "RDDT",
+      "display": "RDDT",
+      "asset_class": "STK",
+      "percent": 6.2
+    },
+    {
+      "symbol": "UNH",
+      "display": "UNH",
+      "asset_class": "STK",
+      "percent": 6.17
+    },
+    {
+      "symbol": "UI",
+      "display": "UI",
+      "asset_class": "STK",
+      "percent": 5.93
+    },
+    {
+      "symbol": "PLTR",
+      "display": "PLTR",
+      "asset_class": "STK",
+      "percent": 5.23
+    },
+    {
+      "symbol": "AAPL",
+      "display": "AAPL",
+      "asset_class": "STK",
+      "percent": 4.72
+    },
+    {
+      "symbol": "CRM",
+      "display": "CRM",
+      "asset_class": "STK",
+      "percent": 3.1
+    },
+    {
+      "symbol": "NVO",
+      "display": "NVO",
+      "asset_class": "STK",
+      "percent": 1.43
+    },
+    {
+      "symbol": "BB",
+      "display": "BB",
+      "asset_class": "STK",
+      "percent": 1.02
+    },
+    {
+      "symbol": "LUMN_270115C10",
+      "display": "LUMN Jan'27 $10C",
+      "asset_class": "OPT",
+      "percent": 0.85,
+      "option": {
+        "underlying": "LUMN",
+        "expiry": "2027-01-15",
+        "type": "call",
+        "strike": 10
+      }
+    },
+    {
+      "symbol": "UNH_270115C450",
+      "display": "UNH Jan'27 $450C",
+      "asset_class": "OPT",
+      "percent": 0.8,
+      "option": {
+        "underlying": "UNH",
+        "expiry": "2027-01-15",
+        "type": "call",
+        "strike": 450
+      }
+    },
+    {
+      "symbol": "BMNR",
+      "display": "BMNR",
+      "asset_class": "STK",
+      "percent": 0.77
+    },
+    {
+      "symbol": "FIG",
+      "display": "FIG",
+      "asset_class": "STK",
+      "percent": 0.3
+    },
+    {
+      "symbol": "NVO_270115C90",
+      "display": "NVO Jan'27 $90C",
+      "asset_class": "OPT",
+      "percent": 0.08,
+      "option": {
+        "underlying": "NVO",
+        "expiry": "2027-01-15",
+        "type": "call",
+        "strike": 90
+      }
+    }
+  ],
+  "performance": {
+    "portfolio": [
+      {
+        "date": "2025-04-24",
+        "return_pct": 0.0
+      },
+      {
+        "date": "2025-04-25",
+        "return_pct": 1.14
+      },
+      {
+        "date": "2025-04-28",
+        "return_pct": -0.81
+      },
+      {
+        "date": "2025-04-29",
+        "return_pct": -2.46
+      },
+      {
+        "date": "2025-04-30",
+        "return_pct": 13.32
+      },
+      {
+        "date": "2025-05-01",
+        "return_pct": 7.48
+      },
+      {
+        "date": "2025-05-02",
+        "return_pct": 9.2
+      },
+      {
+        "date": "2025-05-05",
+        "return_pct": 8.39
+      },
+      {
+        "date": "2025-05-06",
+        "return_pct": 4.8
+      },
+      {
+        "date": "2025-05-07",
+        "return_pct": 5.19
+      },
+      {
+        "date": "2025-05-08",
+        "return_pct": 5.72
+      },
+      {
+        "date": "2025-05-09",
+        "return_pct": 4.89
+      },
+      {
+        "date": "2025-05-12",
+        "return_pct": 10.01
+      },
+      {
+        "date": "2025-05-13",
+        "return_pct": 10.24
+      },
+      {
+        "date": "2025-05-14",
+        "return_pct": 13.4
+      },
+      {
+        "date": "2025-05-15",
+        "return_pct": 14.73
+      },
+      {
+        "date": "2025-05-16",
+        "return_pct": 14.69
+      },
+      {
+        "date": "2025-05-19",
+        "return_pct": 12.71
+      },
+      {
+        "date": "2025-05-20",
+        "return_pct": 12.83
+      },
+      {
+        "date": "2025-05-21",
+        "return_pct": 11.53
+      },
+      {
+        "date": "2025-05-22",
+        "return_pct": 12.53
+      },
+      {
+        "date": "2025-05-23",
+        "return_pct": 8.96
+      },
+      {
+        "date": "2025-05-26",
+        "return_pct": 9.13
+      },
+      {
+        "date": "2025-05-27",
+        "return_pct": 12.04
+      },
+      {
+        "date": "2025-05-28",
+        "return_pct": 12.12
+      },
+      {
+        "date": "2025-05-29",
+        "return_pct": 11.42
+      },
+      {
+        "date": "2025-05-30",
+        "return_pct": 12.61
+      },
+      {
+        "date": "2025-06-02",
+        "return_pct": 12.04
+      },
+      {
+        "date": "2025-06-03",
+        "return_pct": -19.93
+      },
+      {
+        "date": "2025-06-04",
+        "return_pct": -19.93
+      },
+      {
+        "date": "2025-06-05",
+        "return_pct": -20.24
+      },
+      {
+        "date": "2025-06-06",
+        "return_pct": -17.83
+      },
+      {
+        "date": "2025-06-09",
+        "return_pct": -17.81
+      },
+      {
+        "date": "2025-06-10",
+        "return_pct": -17.81
+      },
+      {
+        "date": "2025-06-11",
+        "return_pct": -18.17
+      },
+      {
+        "date": "2025-06-12",
+        "return_pct": -20.41
+      },
+      {
+        "date": "2025-06-13",
+        "return_pct": -21.14
+      },
+      {
+        "date": "2025-06-16",
+        "return_pct": -20.09
+      },
+      {
+        "date": "2025-06-17",
+        "return_pct": -13.73
+      },
+      {
+        "date": "2025-06-18",
+        "return_pct": -14.17
+      },
+      {
+        "date": "2025-06-19",
+        "return_pct": -11.05
+      },
+      {
+        "date": "2025-06-20",
+        "return_pct": -12.94
+      },
+      {
+        "date": "2025-06-23",
+        "return_pct": -1.72
+      },
+      {
+        "date": "2025-06-24",
+        "return_pct": 1.22
+      },
+      {
+        "date": "2025-06-25",
+        "return_pct": 2.1
+      },
+      {
+        "date": "2025-06-26",
+        "return_pct": 3.57
+      },
+      {
+        "date": "2025-06-27",
+        "return_pct": 4.1
+      },
+      {
+        "date": "2025-06-30",
+        "return_pct": 4.31
+      },
+      {
+        "date": "2025-07-01",
+        "return_pct": 31.57
+      },
+      {
+        "date": "2025-07-02",
+        "return_pct": 32.37
+      },
+      {
+        "date": "2025-07-03",
+        "return_pct": 34.06
+      },
+      {
+        "date": "2025-07-04",
+        "return_pct": 34.43
+      },
+      {
+        "date": "2025-07-07",
+        "return_pct": 34.55
+      },
+      {
+        "date": "2025-07-08",
+        "return_pct": 32.27
+      },
+      {
+        "date": "2025-07-09",
+        "return_pct": 33.58
+      },
+      {
+        "date": "2025-07-10",
+        "return_pct": 31.89
+      },
+      {
+        "date": "2025-07-11",
+        "return_pct": 32.67
+      },
+      {
+        "date": "2025-07-14",
+        "return_pct": 34.59
+      },
+      {
+        "date": "2025-07-15",
+        "return_pct": 35.54
+      },
+      {
+        "date": "2025-07-16",
+        "return_pct": 35.68
+      },
+      {
+        "date": "2025-07-17",
+        "return_pct": 37.25
+      },
+      {
+        "date": "2025-07-18",
+        "return_pct": 37.42
+      },
+      {
+        "date": "2025-07-21",
+        "return_pct": 37.77
+      },
+      {
+        "date": "2025-07-22",
+        "return_pct": 35.78
+      },
+      {
+        "date": "2025-07-23",
+        "return_pct": 36.93
+      },
+      {
+        "date": "2025-07-24",
+        "return_pct": 37.84
+      },
+      {
+        "date": "2025-07-25",
+        "return_pct": 39.42
+      },
+      {
+        "date": "2025-07-28",
+        "return_pct": 41.26
+      },
+      {
+        "date": "2025-07-29",
+        "return_pct": 38.75
+      },
+      {
+        "date": "2025-07-30",
+        "return_pct": 22.32
+      },
+      {
+        "date": "2025-07-31",
+        "return_pct": 24.98
+      },
+      {
+        "date": "2025-08-01",
+        "return_pct": 20.91
+      },
+      {
+        "date": "2025-08-04",
+        "return_pct": 26.37
+      },
+      {
+        "date": "2025-08-05",
+        "return_pct": 27.09
+      },
+      {
+        "date": "2025-08-06",
+        "return_pct": 29.88
+      },
+      {
+        "date": "2025-08-07",
+        "return_pct": 30.01
+      },
+      {
+        "date": "2025-08-08",
+        "return_pct": 33.73
+      },
+      {
+        "date": "2025-08-11",
+        "return_pct": 33.97
+      },
+      {
+        "date": "2025-08-12",
+        "return_pct": 37.14
+      },
+      {
+        "date": "2025-08-13",
+        "return_pct": 38.58
+      },
+      {
+        "date": "2025-08-14",
+        "return_pct": 39.68
+      },
+      {
+        "date": "2025-08-15",
+        "return_pct": 40.51
+      },
+      {
+        "date": "2025-08-18",
+        "return_pct": 39.37
+      },
+      {
+        "date": "2025-08-19",
+        "return_pct": 33.55
+      },
+      {
+        "date": "2025-08-20",
+        "return_pct": 31.84
+      },
+      {
+        "date": "2025-08-21",
+        "return_pct": 31.26
+      },
+      {
+        "date": "2025-08-22",
+        "return_pct": 34.77
+      },
+      {
+        "date": "2025-08-25",
+        "return_pct": 34.05
+      },
+      {
+        "date": "2025-08-26",
+        "return_pct": 34.31
+      },
+      {
+        "date": "2025-08-27",
+        "return_pct": 32.35
+      },
+      {
+        "date": "2025-08-28",
+        "return_pct": 34.6
+      },
+      {
+        "date": "2025-08-29",
+        "return_pct": 32.7
+      },
+      {
+        "date": "2025-09-01",
+        "return_pct": 32.35
+      },
+      {
+        "date": "2025-09-02",
+        "return_pct": 31.26
+      },
+      {
+        "date": "2025-09-03",
+        "return_pct": 34.54
+      },
+      {
+        "date": "2025-09-04",
+        "return_pct": 37.38
+      },
+      {
+        "date": "2025-09-05",
+        "return_pct": 36.36
+      },
+      {
+        "date": "2025-09-08",
+        "return_pct": 35.58
+      },
+      {
+        "date": "2025-09-09",
+        "return_pct": 40.99
+      },
+      {
+        "date": "2025-09-10",
+        "return_pct": 41.71
+      },
+      {
+        "date": "2025-09-11",
+        "return_pct": 41.04
+      },
+      {
+        "date": "2025-09-12",
+        "return_pct": 42.71
+      },
+      {
+        "date": "2025-09-15",
+        "return_pct": 45.41
+      },
+      {
+        "date": "2025-09-16",
+        "return_pct": 44.98
+      },
+      {
+        "date": "2025-09-17",
+        "return_pct": 45.2
+      },
+      {
+        "date": "2025-09-18",
+        "return_pct": 49.35
+      },
+      {
+        "date": "2025-09-19",
+        "return_pct": 51.22
+      },
+      {
+        "date": "2025-09-22",
+        "return_pct": 49.8
+      },
+      {
+        "date": "2025-09-23",
+        "return_pct": 46.77
+      },
+      {
+        "date": "2025-09-24",
+        "return_pct": 45.81
+      },
+      {
+        "date": "2025-09-25",
+        "return_pct": 45.67
+      },
+      {
+        "date": "2025-09-26",
+        "return_pct": 46.45
+      },
+      {
+        "date": "2025-09-29",
+        "return_pct": 46.64
+      },
+      {
+        "date": "2025-09-30",
+        "return_pct": 44.02
+      },
+      {
+        "date": "2025-10-01",
+        "return_pct": 41.87
+      },
+      {
+        "date": "2025-10-02",
+        "return_pct": 44.44
+      },
+      {
+        "date": "2025-10-03",
+        "return_pct": 41.92
+      },
+      {
+        "date": "2025-10-06",
+        "return_pct": 47.29
+      },
+      {
+        "date": "2025-10-07",
+        "return_pct": 48.19
+      },
+      {
+        "date": "2025-10-08",
+        "return_pct": 50.53
+      },
+      {
+        "date": "2025-10-09",
+        "return_pct": 53.32
+      },
+      {
+        "date": "2025-10-10",
+        "return_pct": 46.24
+      },
+      {
+        "date": "2025-10-13",
+        "return_pct": 49.49
+      },
+      {
+        "date": "2025-10-14",
+        "return_pct": 49.26
+      },
+      {
+        "date": "2025-10-15",
+        "return_pct": 51.2
+      },
+      {
+        "date": "2025-10-16",
+        "return_pct": 51.33
+      },
+      {
+        "date": "2025-10-17",
+        "return_pct": 51.08
+      },
+      {
+        "date": "2025-10-20",
+        "return_pct": 54.95
+      },
+      {
+        "date": "2025-10-21",
+        "return_pct": 55.42
+      },
+      {
+        "date": "2025-10-22",
+        "return_pct": 51.88
+      },
+      {
+        "date": "2025-10-23",
+        "return_pct": 53.54
+      },
+      {
+        "date": "2025-10-24",
+        "return_pct": 59.34
+      },
+      {
+        "date": "2025-10-27",
+        "return_pct": 62.97
+      },
+      {
+        "date": "2025-10-28",
+        "return_pct": 62.26
+      },
+      {
+        "date": "2025-10-29",
+        "return_pct": 64.87
+      },
+      {
+        "date": "2025-10-30",
+        "return_pct": 58.28
+      },
+      {
+        "date": "2025-10-31",
+        "return_pct": 62.95
+      },
+      {
+        "date": "2025-11-03",
+        "return_pct": 64.44
+      },
+      {
+        "date": "2025-11-04",
+        "return_pct": 58.02
+      },
+      {
+        "date": "2025-11-05",
+        "return_pct": 59.01
+      },
+      {
+        "date": "2025-11-06",
+        "return_pct": 50.85
+      },
+      {
+        "date": "2025-11-07",
+        "return_pct": 49.96
+      },
+      {
+        "date": "2025-11-10",
+        "return_pct": 55.85
+      },
+      {
+        "date": "2025-11-11",
+        "return_pct": 55.14
+      },
+      {
+        "date": "2025-11-12",
+        "return_pct": 54.83
+      },
+      {
+        "date": "2025-11-13",
+        "return_pct": 48.93
+      },
+      {
+        "date": "2025-11-14",
+        "return_pct": 48.43
+      },
+      {
+        "date": "2025-11-17",
+        "return_pct": 47.34
+      },
+      {
+        "date": "2025-11-18",
+        "return_pct": 43.81
+      },
+      {
+        "date": "2025-11-19",
+        "return_pct": 43.91
+      },
+      {
+        "date": "2025-11-20",
+        "return_pct": 44.75
+      },
+      {
+        "date": "2025-11-21",
+        "return_pct": 45.56
+      },
+      {
+        "date": "2025-11-24",
+        "return_pct": 53.74
+      },
+      {
+        "date": "2025-11-25",
+        "return_pct": 57.63
+      },
+      {
+        "date": "2025-11-26",
+        "return_pct": 55.54
+      },
+      {
+        "date": "2025-11-27",
+        "return_pct": 55.0
+      },
+      {
+        "date": "2025-11-28",
+        "return_pct": 57.24
+      },
+      {
+        "date": "2025-12-01",
+        "return_pct": 56.42
+      },
+      {
+        "date": "2025-12-02",
+        "return_pct": 56.44
+      },
+      {
+        "date": "2025-12-03",
+        "return_pct": 56.7
+      },
+      {
+        "date": "2025-12-04",
+        "return_pct": 57.45
+      },
+      {
+        "date": "2025-12-05",
+        "return_pct": 59.52
+      },
+      {
+        "date": "2025-12-08",
+        "return_pct": 59.29
+      },
+      {
+        "date": "2025-12-09",
+        "return_pct": 59.24
+      },
+      {
+        "date": "2025-12-10",
+        "return_pct": 59.89
+      },
+      {
+        "date": "2025-12-11",
+        "return_pct": 58.46
+      },
+      {
+        "date": "2025-12-12",
+        "return_pct": 55.37
+      },
+      {
+        "date": "2025-12-15",
+        "return_pct": 57.87
+      },
+      {
+        "date": "2025-12-16",
+        "return_pct": 57.8
+      },
+      {
+        "date": "2025-12-17",
+        "return_pct": 54.06
+      },
+      {
+        "date": "2025-12-18",
+        "return_pct": 57.9
+      },
+      {
+        "date": "2025-12-19",
+        "return_pct": 61.78
+      },
+      {
+        "date": "2025-12-22",
+        "return_pct": 61.29
+      },
+      {
+        "date": "2025-12-23",
+        "return_pct": 60.73
+      },
+      {
+        "date": "2025-12-24",
+        "return_pct": 60.93
+      },
+      {
+        "date": "2025-12-25",
+        "return_pct": 61.0
+      },
+      {
+        "date": "2025-12-26",
+        "return_pct": 59.73
+      },
+      {
+        "date": "2025-12-29",
+        "return_pct": 60.18
+      },
+      {
+        "date": "2025-12-30",
+        "return_pct": 59.73
+      },
+      {
+        "date": "2025-12-31",
+        "return_pct": 58.55
+      },
+      {
+        "date": "2026-01-01",
+        "return_pct": 58.6
+      },
+      {
+        "date": "2026-01-02",
+        "return_pct": 57.6
+      },
+      {
+        "date": "2026-01-05",
+        "return_pct": 59.31
+      },
+      {
+        "date": "2026-01-06",
+        "return_pct": 60.35
+      },
+      {
+        "date": "2026-01-07",
+        "return_pct": 61.43
+      },
+      {
+        "date": "2026-01-08",
+        "return_pct": 61.1
+      },
+      {
+        "date": "2026-01-09",
+        "return_pct": 60.87
+      },
+      {
+        "date": "2026-01-12",
+        "return_pct": 60.86
+      },
+      {
+        "date": "2026-01-13",
+        "return_pct": 62.8
+      },
+      {
+        "date": "2026-01-14",
+        "return_pct": 60.06
+      },
+      {
+        "date": "2026-01-15",
+        "return_pct": 56.38
+      },
+      {
+        "date": "2026-01-16",
+        "return_pct": 54.93
+      },
+      {
+        "date": "2026-01-19",
+        "return_pct": 53.93
+      },
+      {
+        "date": "2026-01-20",
+        "return_pct": 48.03
+      },
+      {
+        "date": "2026-01-21",
+        "return_pct": 47.62
+      },
+      {
+        "date": "2026-01-22",
+        "return_pct": 48.01
+      },
+      {
+        "date": "2026-01-23",
+        "return_pct": 47.24
+      },
+      {
+        "date": "2026-01-26",
+        "return_pct": 47.92
+      },
+      {
+        "date": "2026-01-27",
+        "return_pct": 41.44
+      },
+      {
+        "date": "2026-01-28",
+        "return_pct": 39.23
+      },
+      {
+        "date": "2026-01-29",
+        "return_pct": 36.84
+      },
+      {
+        "date": "2026-01-30",
+        "return_pct": 34.1
+      },
+      {
+        "date": "2026-02-02",
+        "return_pct": 35.2
+      },
+      {
+        "date": "2026-02-03",
+        "return_pct": 27.97
+      },
+      {
+        "date": "2026-02-04",
+        "return_pct": 18.18
+      },
+      {
+        "date": "2026-02-05",
+        "return_pct": 14.9
+      },
+      {
+        "date": "2026-02-06",
+        "return_pct": 14.62
+      },
+      {
+        "date": "2026-02-09",
+        "return_pct": 16.4
+      },
+      {
+        "date": "2026-02-10",
+        "return_pct": 15.84
+      },
+      {
+        "date": "2026-02-11",
+        "return_pct": 10.99
+      },
+      {
+        "date": "2026-02-12",
+        "return_pct": 9.42
+      },
+      {
+        "date": "2026-02-13",
+        "return_pct": 11.04
+      },
+      {
+        "date": "2026-02-16",
+        "return_pct": 11.13
+      },
+      {
+        "date": "2026-02-17",
+        "return_pct": 8.75
+      },
+      {
+        "date": "2026-02-18",
+        "return_pct": 12.01
+      },
+      {
+        "date": "2026-02-19",
+        "return_pct": 11.03
+      },
+      {
+        "date": "2026-02-20",
+        "return_pct": 15.45
+      },
+      {
+        "date": "2026-02-23",
+        "return_pct": 10.06
+      },
+      {
+        "date": "2026-02-24",
+        "return_pct": 11.62
+      },
+      {
+        "date": "2026-02-25",
+        "return_pct": 12.54
+      },
+      {
+        "date": "2026-02-26",
+        "return_pct": 11.07
+      },
+      {
+        "date": "2026-02-27",
+        "return_pct": 9.1
+      },
+      {
+        "date": "2026-03-02",
+        "return_pct": 10.69
+      },
+      {
+        "date": "2026-03-03",
+        "return_pct": 10.47
+      },
+      {
+        "date": "2026-03-04",
+        "return_pct": 12.33
+      },
+      {
+        "date": "2026-03-05",
+        "return_pct": 13.67
+      },
+      {
+        "date": "2026-03-06",
+        "return_pct": 9.6
+      },
+      {
+        "date": "2026-03-09",
+        "return_pct": 10.46
+      },
+      {
+        "date": "2026-03-10",
+        "return_pct": 8.47
+      },
+      {
+        "date": "2026-03-11",
+        "return_pct": 8.35
+      },
+      {
+        "date": "2026-03-12",
+        "return_pct": 7.01
+      },
+      {
+        "date": "2026-03-13",
+        "return_pct": 7.45
+      },
+      {
+        "date": "2026-03-16",
+        "return_pct": 8.53
+      },
+      {
+        "date": "2026-03-17",
+        "return_pct": 9.13
+      },
+      {
+        "date": "2026-03-18",
+        "return_pct": 8.87
+      },
+      {
+        "date": "2026-03-19",
+        "return_pct": 6.21
+      },
+      {
+        "date": "2026-03-20",
+        "return_pct": 4.22
+      },
+      {
+        "date": "2026-03-23",
+        "return_pct": 7.45
+      },
+      {
+        "date": "2026-03-24",
+        "return_pct": 3.88
+      },
+      {
+        "date": "2026-03-25",
+        "return_pct": 7.61
+      },
+      {
+        "date": "2026-03-26",
+        "return_pct": 0.28
+      },
+      {
+        "date": "2026-03-27",
+        "return_pct": -5.32
+      },
+      {
+        "date": "2026-03-30",
+        "return_pct": -5.61
+      },
+      {
+        "date": "2026-03-31",
+        "return_pct": 3.41
+      },
+      {
+        "date": "2026-04-01",
+        "return_pct": 6.1
+      },
+      {
+        "date": "2026-04-02",
+        "return_pct": 7.77
+      },
+      {
+        "date": "2026-04-03",
+        "return_pct": 8.34
+      },
+      {
+        "date": "2026-04-06",
+        "return_pct": 8.95
+      },
+      {
+        "date": "2026-04-07",
+        "return_pct": 10.0
+      },
+      {
+        "date": "2026-04-08",
+        "return_pct": 13.39
+      },
+      {
+        "date": "2026-04-09",
+        "return_pct": 13.23
+      },
+      {
+        "date": "2026-04-10",
+        "return_pct": 14.69
+      },
+      {
+        "date": "2026-04-13",
+        "return_pct": 18.33
+      },
+      {
+        "date": "2026-04-14",
+        "return_pct": 24.44
+      },
+      {
+        "date": "2026-04-15",
+        "return_pct": 28.17
+      },
+      {
+        "date": "2026-04-16",
+        "return_pct": 31.89
+      },
+      {
+        "date": "2026-04-17",
+        "return_pct": 35.42
+      },
+      {
+        "date": "2026-04-20",
+        "return_pct": 33.82
+      },
+      {
+        "date": "2026-04-21",
+        "return_pct": 34.18
+      },
+      {
+        "date": "2026-04-22",
+        "return_pct": 40.46
+      },
+      {
+        "date": "2026-04-23",
+        "return_pct": 36.81
+      },
+      {
+        "date": "2026-04-24",
+        "return_pct": 43.31
+      }
+    ],
+    "benchmark": {
+      "ticker": "SPY",
+      "series": [
+        {
+          "date": "2025-04-24",
+          "return_pct": 0.0
+        },
+        {
+          "date": "2025-04-25",
+          "return_pct": 0.72
+        },
+        {
+          "date": "2025-04-28",
+          "return_pct": 0.76
+        },
+        {
+          "date": "2025-04-29",
+          "return_pct": 1.4
+        },
+        {
+          "date": "2025-04-30",
+          "return_pct": 1.44
+        },
+        {
+          "date": "2025-05-01",
+          "return_pct": 2.15
+        },
+        {
+          "date": "2025-05-02",
+          "return_pct": 3.67
+        },
+        {
+          "date": "2025-05-05",
+          "return_pct": 3.08
+        },
+        {
+          "date": "2025-05-06",
+          "return_pct": 2.22
+        },
+        {
+          "date": "2025-05-07",
+          "return_pct": 2.65
+        },
+        {
+          "date": "2025-05-08",
+          "return_pct": 3.36
+        },
+        {
+          "date": "2025-05-09",
+          "return_pct": 3.23
+        },
+        {
+          "date": "2025-05-12",
+          "return_pct": 6.64
+        },
+        {
+          "date": "2025-05-13",
+          "return_pct": 7.34
+        },
+        {
+          "date": "2025-05-14",
+          "return_pct": 7.48
+        },
+        {
+          "date": "2025-05-15",
+          "return_pct": 8.01
+        },
+        {
+          "date": "2025-05-16",
+          "return_pct": 8.69
+        },
+        {
+          "date": "2025-05-19",
+          "return_pct": 8.81
+        },
+        {
+          "date": "2025-05-20",
+          "return_pct": 8.44
+        },
+        {
+          "date": "2025-05-21",
+          "return_pct": 6.62
+        },
+        {
+          "date": "2025-05-22",
+          "return_pct": 6.66
+        },
+        {
+          "date": "2025-05-23",
+          "return_pct": 5.93
+        },
+        {
+          "date": "2025-05-27",
+          "return_pct": 8.13
+        },
+        {
+          "date": "2025-05-28",
+          "return_pct": 7.51
+        },
+        {
+          "date": "2025-05-29",
+          "return_pct": 7.93
+        },
+        {
+          "date": "2025-05-30",
+          "return_pct": 7.81
+        },
+        {
+          "date": "2025-06-02",
+          "return_pct": 8.42
+        },
+        {
+          "date": "2025-06-03",
+          "return_pct": 9.04
+        },
+        {
+          "date": "2025-06-04",
+          "return_pct": 9.01
+        },
+        {
+          "date": "2025-06-05",
+          "return_pct": 8.48
+        },
+        {
+          "date": "2025-06-06",
+          "return_pct": 9.59
+        },
+        {
+          "date": "2025-06-09",
+          "return_pct": 9.69
+        },
+        {
+          "date": "2025-06-10",
+          "return_pct": 10.31
+        },
+        {
+          "date": "2025-06-11",
+          "return_pct": 10.0
+        },
+        {
+          "date": "2025-06-12",
+          "return_pct": 10.44
+        },
+        {
+          "date": "2025-06-13",
+          "return_pct": 9.2
+        },
+        {
+          "date": "2025-06-16",
+          "return_pct": 10.24
+        },
+        {
+          "date": "2025-06-17",
+          "return_pct": 9.3
+        },
+        {
+          "date": "2025-06-18",
+          "return_pct": 9.28
+        },
+        {
+          "date": "2025-06-20",
+          "return_pct": 8.71
+        },
+        {
+          "date": "2025-06-23",
+          "return_pct": 9.78
+        },
+        {
+          "date": "2025-06-24",
+          "return_pct": 10.99
+        },
+        {
+          "date": "2025-06-25",
+          "return_pct": 11.05
+        },
+        {
+          "date": "2025-06-26",
+          "return_pct": 11.92
+        },
+        {
+          "date": "2025-06-27",
+          "return_pct": 12.48
+        },
+        {
+          "date": "2025-06-30",
+          "return_pct": 13.02
+        },
+        {
+          "date": "2025-07-01",
+          "return_pct": 12.98
+        },
+        {
+          "date": "2025-07-02",
+          "return_pct": 13.49
+        },
+        {
+          "date": "2025-07-03",
+          "return_pct": 14.39
+        },
+        {
+          "date": "2025-07-07",
+          "return_pct": 13.53
+        },
+        {
+          "date": "2025-07-08",
+          "return_pct": 13.47
+        },
+        {
+          "date": "2025-07-09",
+          "return_pct": 14.15
+        },
+        {
+          "date": "2025-07-10",
+          "return_pct": 14.47
+        },
+        {
+          "date": "2025-07-11",
+          "return_pct": 14.07
+        },
+        {
+          "date": "2025-07-14",
+          "return_pct": 14.29
+        },
+        {
+          "date": "2025-07-15",
+          "return_pct": 13.8
+        },
+        {
+          "date": "2025-07-16",
+          "return_pct": 14.18
+        },
+        {
+          "date": "2025-07-17",
+          "return_pct": 14.88
+        },
+        {
+          "date": "2025-07-18",
+          "return_pct": 14.8
+        },
+        {
+          "date": "2025-07-21",
+          "return_pct": 15.01
+        },
+        {
+          "date": "2025-07-22",
+          "return_pct": 15.03
+        },
+        {
+          "date": "2025-07-23",
+          "return_pct": 16.01
+        },
+        {
+          "date": "2025-07-24",
+          "return_pct": 16.05
+        },
+        {
+          "date": "2025-07-25",
+          "return_pct": 16.54
+        },
+        {
+          "date": "2025-07-28",
+          "return_pct": 16.51
+        },
+        {
+          "date": "2025-07-29",
+          "return_pct": 16.2
+        },
+        {
+          "date": "2025-07-30",
+          "return_pct": 16.05
+        },
+        {
+          "date": "2025-07-31",
+          "return_pct": 15.62
+        },
+        {
+          "date": "2025-08-01",
+          "return_pct": 13.72
+        },
+        {
+          "date": "2025-08-04",
+          "return_pct": 15.45
+        },
+        {
+          "date": "2025-08-05",
+          "return_pct": 14.87
+        },
+        {
+          "date": "2025-08-06",
+          "return_pct": 15.75
+        },
+        {
+          "date": "2025-08-07",
+          "return_pct": 15.65
+        },
+        {
+          "date": "2025-08-08",
+          "return_pct": 16.55
+        },
+        {
+          "date": "2025-08-11",
+          "return_pct": 16.32
+        },
+        {
+          "date": "2025-08-12",
+          "return_pct": 17.56
+        },
+        {
+          "date": "2025-08-13",
+          "return_pct": 17.96
+        },
+        {
+          "date": "2025-08-14",
+          "return_pct": 17.97
+        },
+        {
+          "date": "2025-08-15",
+          "return_pct": 17.7
+        },
+        {
+          "date": "2025-08-18",
+          "return_pct": 17.67
+        },
+        {
+          "date": "2025-08-19",
+          "return_pct": 17.03
+        },
+        {
+          "date": "2025-08-20",
+          "return_pct": 16.72
+        },
+        {
+          "date": "2025-08-21",
+          "return_pct": 16.25
+        },
+        {
+          "date": "2025-08-22",
+          "return_pct": 18.04
+        },
+        {
+          "date": "2025-08-25",
+          "return_pct": 17.52
+        },
+        {
+          "date": "2025-08-26",
+          "return_pct": 18.01
+        },
+        {
+          "date": "2025-08-27",
+          "return_pct": 18.28
+        },
+        {
+          "date": "2025-08-28",
+          "return_pct": 18.7
+        },
+        {
+          "date": "2025-08-29",
+          "return_pct": 17.99
+        },
+        {
+          "date": "2025-09-02",
+          "return_pct": 17.12
+        },
+        {
+          "date": "2025-09-03",
+          "return_pct": 17.75
+        },
+        {
+          "date": "2025-09-04",
+          "return_pct": 18.74
+        },
+        {
+          "date": "2025-09-05",
+          "return_pct": 18.39
+        },
+        {
+          "date": "2025-09-08",
+          "return_pct": 18.68
+        },
+        {
+          "date": "2025-09-09",
+          "return_pct": 18.96
+        },
+        {
+          "date": "2025-09-10",
+          "return_pct": 19.3
+        },
+        {
+          "date": "2025-09-11",
+          "return_pct": 20.29
+        },
+        {
+          "date": "2025-09-12",
+          "return_pct": 20.25
+        },
+        {
+          "date": "2025-09-15",
+          "return_pct": 20.89
+        },
+        {
+          "date": "2025-09-16",
+          "return_pct": 20.73
+        },
+        {
+          "date": "2025-09-17",
+          "return_pct": 20.58
+        },
+        {
+          "date": "2025-09-18",
+          "return_pct": 21.14
+        },
+        {
+          "date": "2025-09-19",
+          "return_pct": 21.4
+        },
+        {
+          "date": "2025-09-22",
+          "return_pct": 21.98
+        },
+        {
+          "date": "2025-09-23",
+          "return_pct": 21.31
+        },
+        {
+          "date": "2025-09-24",
+          "return_pct": 20.93
+        },
+        {
+          "date": "2025-09-25",
+          "return_pct": 20.37
+        },
+        {
+          "date": "2025-09-26",
+          "return_pct": 21.06
+        },
+        {
+          "date": "2025-09-29",
+          "return_pct": 21.4
+        },
+        {
+          "date": "2025-09-30",
+          "return_pct": 21.86
+        },
+        {
+          "date": "2025-10-01",
+          "return_pct": 22.27
+        },
+        {
+          "date": "2025-10-02",
+          "return_pct": 22.41
+        },
+        {
+          "date": "2025-10-03",
+          "return_pct": 22.41
+        },
+        {
+          "date": "2025-10-06",
+          "return_pct": 22.85
+        },
+        {
+          "date": "2025-10-07",
+          "return_pct": 22.39
+        },
+        {
+          "date": "2025-10-08",
+          "return_pct": 23.12
+        },
+        {
+          "date": "2025-10-09",
+          "return_pct": 22.77
+        },
+        {
+          "date": "2025-10-10",
+          "return_pct": 19.45
+        },
+        {
+          "date": "2025-10-13",
+          "return_pct": 21.28
+        },
+        {
+          "date": "2025-10-14",
+          "return_pct": 21.13
+        },
+        {
+          "date": "2025-10-15",
+          "return_pct": 21.67
+        },
+        {
+          "date": "2025-10-16",
+          "return_pct": 20.84
+        },
+        {
+          "date": "2025-10-17",
+          "return_pct": 21.53
+        },
+        {
+          "date": "2025-10-20",
+          "return_pct": 22.79
+        },
+        {
+          "date": "2025-10-21",
+          "return_pct": 22.79
+        },
+        {
+          "date": "2025-10-22",
+          "return_pct": 22.15
+        },
+        {
+          "date": "2025-10-23",
+          "return_pct": 22.88
+        },
+        {
+          "date": "2025-10-24",
+          "return_pct": 23.88
+        },
+        {
+          "date": "2025-10-27",
+          "return_pct": 25.34
+        },
+        {
+          "date": "2025-10-28",
+          "return_pct": 25.68
+        },
+        {
+          "date": "2025-10-29",
+          "return_pct": 25.74
+        },
+        {
+          "date": "2025-10-30",
+          "return_pct": 24.35
+        },
+        {
+          "date": "2025-10-31",
+          "return_pct": 24.76
+        },
+        {
+          "date": "2025-11-03",
+          "return_pct": 25.0
+        },
+        {
+          "date": "2025-11-04",
+          "return_pct": 23.51
+        },
+        {
+          "date": "2025-11-05",
+          "return_pct": 23.94
+        },
+        {
+          "date": "2025-11-06",
+          "return_pct": 22.61
+        },
+        {
+          "date": "2025-11-07",
+          "return_pct": 22.73
+        },
+        {
+          "date": "2025-11-10",
+          "return_pct": 24.65
+        },
+        {
+          "date": "2025-11-11",
+          "return_pct": 24.93
+        },
+        {
+          "date": "2025-11-12",
+          "return_pct": 25.0
+        },
+        {
+          "date": "2025-11-13",
+          "return_pct": 22.93
+        },
+        {
+          "date": "2025-11-14",
+          "return_pct": 22.91
+        },
+        {
+          "date": "2025-11-17",
+          "return_pct": 21.76
+        },
+        {
+          "date": "2025-11-18",
+          "return_pct": 20.74
+        },
+        {
+          "date": "2025-11-19",
+          "return_pct": 21.21
+        },
+        {
+          "date": "2025-11-20",
+          "return_pct": 19.36
+        },
+        {
+          "date": "2025-11-21",
+          "return_pct": 20.55
+        },
+        {
+          "date": "2025-11-24",
+          "return_pct": 22.32
+        },
+        {
+          "date": "2025-11-25",
+          "return_pct": 23.47
+        },
+        {
+          "date": "2025-11-26",
+          "return_pct": 24.33
+        },
+        {
+          "date": "2025-11-28",
+          "return_pct": 25.01
+        },
+        {
+          "date": "2025-12-01",
+          "return_pct": 24.43
+        },
+        {
+          "date": "2025-12-02",
+          "return_pct": 24.66
+        },
+        {
+          "date": "2025-12-03",
+          "return_pct": 25.1
+        },
+        {
+          "date": "2025-12-04",
+          "return_pct": 25.19
+        },
+        {
+          "date": "2025-12-05",
+          "return_pct": 25.43
+        },
+        {
+          "date": "2025-12-08",
+          "return_pct": 25.05
+        },
+        {
+          "date": "2025-12-09",
+          "return_pct": 24.94
+        },
+        {
+          "date": "2025-12-10",
+          "return_pct": 25.77
+        },
+        {
+          "date": "2025-12-11",
+          "return_pct": 26.06
+        },
+        {
+          "date": "2025-12-12",
+          "return_pct": 24.71
+        },
+        {
+          "date": "2025-12-15",
+          "return_pct": 24.52
+        },
+        {
+          "date": "2025-12-16",
+          "return_pct": 24.18
+        },
+        {
+          "date": "2025-12-17",
+          "return_pct": 22.81
+        },
+        {
+          "date": "2025-12-18",
+          "return_pct": 23.74
+        },
+        {
+          "date": "2025-12-19",
+          "return_pct": 24.49
+        },
+        {
+          "date": "2025-12-22",
+          "return_pct": 25.27
+        },
+        {
+          "date": "2025-12-23",
+          "return_pct": 25.84
+        },
+        {
+          "date": "2025-12-24",
+          "return_pct": 26.28
+        },
+        {
+          "date": "2025-12-26",
+          "return_pct": 26.27
+        },
+        {
+          "date": "2025-12-29",
+          "return_pct": 25.82
+        },
+        {
+          "date": "2025-12-30",
+          "return_pct": 25.67
+        },
+        {
+          "date": "2025-12-31",
+          "return_pct": 24.74
+        },
+        {
+          "date": "2026-01-02",
+          "return_pct": 24.96
+        },
+        {
+          "date": "2026-01-05",
+          "return_pct": 25.8
+        },
+        {
+          "date": "2026-01-06",
+          "return_pct": 26.55
+        },
+        {
+          "date": "2026-01-07",
+          "return_pct": 26.14
+        },
+        {
+          "date": "2026-01-08",
+          "return_pct": 26.12
+        },
+        {
+          "date": "2026-01-09",
+          "return_pct": 26.96
+        },
+        {
+          "date": "2026-01-12",
+          "return_pct": 27.16
+        },
+        {
+          "date": "2026-01-13",
+          "return_pct": 26.9
+        },
+        {
+          "date": "2026-01-14",
+          "return_pct": 26.28
+        },
+        {
+          "date": "2026-01-15",
+          "return_pct": 26.62
+        },
+        {
+          "date": "2026-01-16",
+          "return_pct": 26.52
+        },
+        {
+          "date": "2026-01-20",
+          "return_pct": 23.94
+        },
+        {
+          "date": "2026-01-21",
+          "return_pct": 25.37
+        },
+        {
+          "date": "2026-01-22",
+          "return_pct": 26.03
+        },
+        {
+          "date": "2026-01-23",
+          "return_pct": 26.07
+        },
+        {
+          "date": "2026-01-26",
+          "return_pct": 26.71
+        },
+        {
+          "date": "2026-01-27",
+          "return_pct": 27.22
+        },
+        {
+          "date": "2026-01-28",
+          "return_pct": 27.21
+        },
+        {
+          "date": "2026-01-29",
+          "return_pct": 26.95
+        },
+        {
+          "date": "2026-01-30",
+          "return_pct": 26.57
+        },
+        {
+          "date": "2026-02-02",
+          "return_pct": 27.2
+        },
+        {
+          "date": "2026-02-03",
+          "return_pct": 26.13
+        },
+        {
+          "date": "2026-02-04",
+          "return_pct": 25.52
+        },
+        {
+          "date": "2026-02-05",
+          "return_pct": 23.95
+        },
+        {
+          "date": "2026-02-06",
+          "return_pct": 26.33
+        },
+        {
+          "date": "2026-02-09",
+          "return_pct": 26.94
+        },
+        {
+          "date": "2026-02-10",
+          "return_pct": 26.6
+        },
+        {
+          "date": "2026-02-11",
+          "return_pct": 26.57
+        },
+        {
+          "date": "2026-02-12",
+          "return_pct": 24.62
+        },
+        {
+          "date": "2026-02-13",
+          "return_pct": 24.71
+        },
+        {
+          "date": "2026-02-17",
+          "return_pct": 24.91
+        },
+        {
+          "date": "2026-02-18",
+          "return_pct": 25.54
+        },
+        {
+          "date": "2026-02-19",
+          "return_pct": 25.2
+        },
+        {
+          "date": "2026-02-20",
+          "return_pct": 26.11
+        },
+        {
+          "date": "2026-02-23",
+          "return_pct": 24.82
+        },
+        {
+          "date": "2026-02-24",
+          "return_pct": 25.73
+        },
+        {
+          "date": "2026-02-25",
+          "return_pct": 26.79
+        },
+        {
+          "date": "2026-02-26",
+          "return_pct": 26.09
+        },
+        {
+          "date": "2026-02-27",
+          "return_pct": 25.48
+        },
+        {
+          "date": "2026-03-02",
+          "return_pct": 25.55
+        },
+        {
+          "date": "2026-03-03",
+          "return_pct": 24.45
+        },
+        {
+          "date": "2026-03-04",
+          "return_pct": 25.32
+        },
+        {
+          "date": "2026-03-05",
+          "return_pct": 24.62
+        },
+        {
+          "date": "2026-03-06",
+          "return_pct": 22.99
+        },
+        {
+          "date": "2026-03-09",
+          "return_pct": 24.07
+        },
+        {
+          "date": "2026-03-10",
+          "return_pct": 23.87
+        },
+        {
+          "date": "2026-03-11",
+          "return_pct": 23.71
+        },
+        {
+          "date": "2026-03-12",
+          "return_pct": 21.84
+        },
+        {
+          "date": "2026-03-13",
+          "return_pct": 21.15
+        },
+        {
+          "date": "2026-03-16",
+          "return_pct": 22.38
+        },
+        {
+          "date": "2026-03-17",
+          "return_pct": 22.7
+        },
+        {
+          "date": "2026-03-18",
+          "return_pct": 20.99
+        },
+        {
+          "date": "2026-03-19",
+          "return_pct": 20.69
+        },
+        {
+          "date": "2026-03-20",
+          "return_pct": 18.64
+        },
+        {
+          "date": "2026-03-23",
+          "return_pct": 19.88
+        },
+        {
+          "date": "2026-03-24",
+          "return_pct": 19.48
+        },
+        {
+          "date": "2026-03-25",
+          "return_pct": 20.14
+        },
+        {
+          "date": "2026-03-26",
+          "return_pct": 18.0
+        },
+        {
+          "date": "2026-03-27",
+          "return_pct": 15.99
+        },
+        {
+          "date": "2026-03-30",
+          "return_pct": 15.6
+        },
+        {
+          "date": "2026-03-31",
+          "return_pct": 18.96
+        },
+        {
+          "date": "2026-04-01",
+          "return_pct": 19.86
+        },
+        {
+          "date": "2026-04-02",
+          "return_pct": 19.96
+        },
+        {
+          "date": "2026-04-06",
+          "return_pct": 20.53
+        },
+        {
+          "date": "2026-04-07",
+          "return_pct": 20.58
+        },
+        {
+          "date": "2026-04-08",
+          "return_pct": 23.66
+        },
+        {
+          "date": "2026-04-09",
+          "return_pct": 24.37
+        },
+        {
+          "date": "2026-04-10",
+          "return_pct": 24.29
+        },
+        {
+          "date": "2026-04-13",
+          "return_pct": 25.5
+        },
+        {
+          "date": "2026-04-14",
+          "return_pct": 27.03
+        },
+        {
+          "date": "2026-04-15",
+          "return_pct": 28.03
+        },
+        {
+          "date": "2026-04-16",
+          "return_pct": 28.35
+        },
+        {
+          "date": "2026-04-17",
+          "return_pct": 29.9
+        },
+        {
+          "date": "2026-04-20",
+          "return_pct": 29.64
+        },
+        {
+          "date": "2026-04-21",
+          "return_pct": 28.79
+        },
+        {
+          "date": "2026-04-22",
+          "return_pct": 30.09
+        },
+        {
+          "date": "2026-04-23",
+          "return_pct": 29.59
+        },
+        {
+          "date": "2026-04-24",
+          "return_pct": 30.59
+        }
+      ]
+    }
+  },
+  "recent_moves": [
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "UNH_270115C450",
+      "display": "UNH Jan'27 $450C",
+      "delta_pp": 0.8,
+      "from_pct": 0.0,
+      "to_pct": 0.8
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "UNH",
+      "display": "UNH",
+      "delta_pp": 6.17,
+      "from_pct": 0.0,
+      "to_pct": 6.17
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "UI",
+      "display": "UI",
+      "delta_pp": 5.93,
+      "from_pct": 0.0,
+      "to_pct": 5.93
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "RDDT",
+      "display": "RDDT",
+      "delta_pp": 6.2,
+      "from_pct": 0.0,
+      "to_pct": 6.2
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "PLTR",
+      "display": "PLTR",
+      "delta_pp": 5.23,
+      "from_pct": 0.0,
+      "to_pct": 5.23
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "NVO_270115C90",
+      "display": "NVO Jan'27 $90C",
+      "delta_pp": 0.08,
+      "from_pct": 0.0,
+      "to_pct": 0.08
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "NVO",
+      "display": "NVO",
+      "delta_pp": 1.43,
+      "from_pct": 0.0,
+      "to_pct": 1.43
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "NVDA",
+      "display": "NVDA",
+      "delta_pp": 7.25,
+      "from_pct": 0.0,
+      "to_pct": 7.25
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "MSFT",
+      "display": "MSFT",
+      "delta_pp": 8.13,
+      "from_pct": 0.0,
+      "to_pct": 8.13
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "META",
+      "display": "META",
+      "delta_pp": 9.98,
+      "from_pct": 0.0,
+      "to_pct": 9.98
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "LUMN_270115C10",
+      "display": "LUMN Jan'27 $10C",
+      "delta_pp": 0.85,
+      "from_pct": 0.0,
+      "to_pct": 0.85
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "GOOGL",
+      "display": "GOOGL",
+      "delta_pp": 18.57,
+      "from_pct": 0.0,
+      "to_pct": 18.57
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "FIG",
+      "display": "FIG",
+      "delta_pp": 0.3,
+      "from_pct": 0.0,
+      "to_pct": 0.3
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "CRM",
+      "display": "CRM",
+      "delta_pp": 3.1,
+      "from_pct": 0.0,
+      "to_pct": 3.1
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "BMNR",
+      "display": "BMNR",
+      "delta_pp": 0.77,
+      "from_pct": 0.0,
+      "to_pct": 0.77
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "BB",
+      "display": "BB",
+      "delta_pp": 1.02,
+      "from_pct": 0.0,
+      "to_pct": 1.02
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "AMZN",
+      "display": "AMZN",
+      "delta_pp": 9.18,
+      "from_pct": 0.0,
+      "to_pct": 9.18
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "AMD",
+      "display": "AMD",
+      "delta_pp": 10.29,
+      "from_pct": 0.0,
+      "to_pct": 10.29
+    },
+    {
+      "date": "2026-04-27",
+      "type": "open",
+      "symbol": "AAPL",
+      "display": "AAPL",
+      "delta_pp": 4.72,
+      "from_pct": 0.0,
+      "to_pct": 4.72
+    }
+  ]
+}
