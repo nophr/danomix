@@ -22,6 +22,7 @@ import os
 import sys
 from datetime import date
 from pathlib import Path
+from typing import Optional
 
 from scripts import flex, parse, transform, nav_history, moves, benchmark
 
@@ -35,14 +36,18 @@ VERSION = 1
 
 
 def build_snapshot(*, flex_xml: str, pct_series: list[dict], latest_nav: dict,
-                   spy_series: list[dict], prior_holdings: list[dict], today: str) -> dict:
+                   spy_series: list[dict], prior_holdings: Optional[list[dict]], today: str) -> dict:
     parsed = parse.parse_flex_xml(flex_xml)
     holdings = transform.build_holdings(parsed["positions"])
 
     leverage = transform.compute_leverage(latest_nav)
     inception = pct_series[0]["date"]
 
-    recent = moves.classify_moves(holdings, prior_holdings, as_of=today)
+    # No baseline (brand-new repo / first run) → suppress the seed-data flood of synthetic "open" moves.
+    if prior_holdings is None:
+        recent = []
+    else:
+        recent = moves.classify_moves(holdings, prior_holdings, as_of=today)
 
     return {
         "version":        VERSION,
@@ -64,12 +69,14 @@ def _atomic_write_json(path: Path, data) -> None:
     tmp.replace(path)
 
 
-def _load_prior_holdings_30d_ago() -> list[dict]:
+def _load_prior_holdings_30d_ago() -> Optional[list[dict]]:
     """Read data/snapshot.json as it existed ~30 days ago via git history.
 
-    Returns [] when:
-      - the repo has no commit from that far back (brand-new repo)
-      - the file didn't exist yet at that commit (first run)
+    Returns None when no baseline is available (brand-new repo, or the file
+    didn't exist at that commit) — so callers can suppress the seed-data
+    flood of synthetic "open" moves on the first run.
+
+    Returns a list (possibly empty) when a baseline was actually found.
     """
     import subprocess
     try:
@@ -78,16 +85,16 @@ def _load_prior_holdings_30d_ago() -> list[dict]:
             capture_output=True, text=True, check=True,
         ).stdout.strip()
         if not sha:
-            return []
+            return None
         result = subprocess.run(
             ["git", "show", f"{sha}:data/snapshot.json"],
             capture_output=True, text=True, check=False,
         )
         if result.returncode != 0:
-            return []  # file didn't exist at that commit
+            return None  # file didn't exist at that commit
         return json.loads(result.stdout).get("holdings", [])
     except (subprocess.SubprocessError, json.JSONDecodeError):
-        return []
+        return None
 
 
 def main() -> int:

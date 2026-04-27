@@ -54,3 +54,16 @@ def test_build_snapshot_recent_moves_classifies_opens():
     )
     move_types = {m["type"] for m in snap["recent_moves"]}
     assert move_types == {"open"}  # all 3 positions are new
+
+
+def test_build_snapshot_suppresses_seed_data_when_no_baseline():
+    xml = read_fixture("sample_flex.xml")
+    snap = fetch_snapshot.build_snapshot(
+        flex_xml=xml,
+        pct_series=[{"date": "2024-12-31", "return_pct": 0.0}],
+        latest_nav={"date": "2024-12-31", "total": 120000.0, "total_long": 150000.0, "total_short": -30000.0},
+        spy_series=[{"date": "2024-12-31", "return_pct": 0.0}],
+        prior_holdings=None,  # no baseline (brand-new repo / first run)
+        today="2024-12-31",
+    )
+    assert snap["recent_moves"] == []
