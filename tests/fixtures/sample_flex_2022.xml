@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexQueryResponse queryName="Test2022" type="AF">
+<FlexStatements count="1">
+<FlexStatement accountId="U0000000" fromDate="2022-01-04" toDate="2022-12-30" period="LastBusinessYear" whenGenerated="2022-12-30;000000 UTC">
+<EquitySummaryInBase>
+<EquitySummaryByReportDateInBase reportDate="2022-01-04" total="100000" totalLong="100000" totalShort="0" />
+<EquitySummaryByReportDateInBase reportDate="2022-06-15" total="105000" totalLong="115000" totalShort="-10000" />
+<EquitySummaryByReportDateInBase reportDate="2022-12-30" total="110000" totalLong="120000" totalShort="-10000" />
+</EquitySummaryInBase>
+</FlexStatement>
+</FlexStatements>
+</FlexQueryResponse>
