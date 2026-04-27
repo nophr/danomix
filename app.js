@@ -223,19 +223,46 @@ function renderChart(series) {
   chartInstance = new uPlot(opts, series, host);
 }
 
+const RANGE_LABEL = {
+  all: "All-Time Return · Since Inception",
+  "3y": "3-Year Return",
+  "1y": "1-Year Return",
+  ytd: "Year-to-Date Return",
+};
+
+// Returns total return % for the slice of `series` covered by `range`,
+// chained through the inception anchor: ((1+pct_now/100)/(1+pct_start/100)-1)*100
+function windowReturn(series, range) {
+  if (!series.length) return null;
+  if (range === "all") return series[series.length - 1].return_pct;
+  const now = series[series.length - 1];
+  const cutoffSec =
+    range === "ytd" ? new Date(Date.UTC(new Date().getUTCFullYear(), 0, 1)).getTime() / 1000 :
+    range === "1y"  ? new Date(now.date + "T00:00:00Z").getTime() / 1000 - 365 * 24 * 3600 :
+    range === "3y"  ? new Date(now.date + "T00:00:00Z").getTime() / 1000 - 3 * 365 * 24 * 3600 : 0;
+  const start = series.find(p => new Date(p.date + "T00:00:00Z").getTime() / 1000 >= cutoffSec);
+  if (!start || start.date === now.date) return now.return_pct;
+  const factor_now   = 1 + now.return_pct / 100;
+  const factor_start = 1 + start.return_pct / 100;
+  return (factor_now / factor_start - 1) * 100;
+}
+
 function renderHero(snap, range) {
   const pf = snap.performance.portfolio;
   const bm = snap.performance.benchmark.series;
-  const now = pf[pf.length - 1];
-  document.getElementById("returnBig").textContent =
-    (now.return_pct >= 0 ? "+" : "") + now.return_pct.toFixed(1) + "%";
+  document.querySelector(".pg-eyebrow").textContent = RANGE_LABEL[range] || RANGE_LABEL.all;
 
-  const bmNow = bm[bm.length - 1];
-  if (bmNow) {
-    const out = (now.return_pct - bmNow.return_pct).toFixed(1);
+  const portfolioRet = windowReturn(pf, range);
+  if (portfolioRet === null) return;
+  document.getElementById("returnBig").textContent =
+    (portfolioRet >= 0 ? "+" : "") + portfolioRet.toFixed(1) + "%";
+
+  const bmRet = windowReturn(bm, range);
+  if (bmRet !== null) {
+    const out = portfolioRet - bmRet;
     document.getElementById("returnSub").innerHTML =
-      `S&amp;P 500 <span class="pg-delta">${bmNow.return_pct >= 0 ? "+" : ""}${bmNow.return_pct.toFixed(1)}%</span> · ` +
-      `Outperformance <span class="pg-delta">${out >= 0 ? "+" : ""}${out} pp</span>`;
+      `S&amp;P 500 <span class="pg-delta">${bmRet >= 0 ? "+" : ""}${bmRet.toFixed(1)}%</span> · ` +
+      `Outperformance <span class="pg-delta">${out >= 0 ? "+" : ""}${out.toFixed(1)} pp</span>`;
   }
 }
 
@@ -245,8 +272,9 @@ function setupRangeTabs(snap) {
     btn.addEventListener("click", () => {
       document.querySelectorAll("#ranges .pg-range").forEach(b => b.classList.remove("is-active"));
       btn.classList.add("is-active");
-      const filtered = filterByRange(series, btn.dataset.range);
-      renderChart(filtered);
+      const range = btn.dataset.range;
+      renderChart(filterByRange(series, range));
+      renderHero(snap, range);
     });
   });
   renderChart(series);
