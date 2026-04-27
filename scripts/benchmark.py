@@ -1,34 +1,39 @@
-"""Fetch SPY daily closes from Stooq and normalize to an inception-relative return series."""
+"""Fetch SPY daily closes from Yahoo Finance and normalize to an inception-relative return series."""
 
 from __future__ import annotations
 
+import json
+import time
 import urllib.request
+from datetime import datetime, timezone
 from typing import Optional
 
-STOOQ_URL = "https://stooq.com/q/d/l/?s=spy.us&i=d"
+YAHOO_URL = "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=0&period2={now}&interval=1d"
 
 
 def _urlopen(url: str, timeout: int = 30):
-    return urllib.request.urlopen(url, timeout=timeout)
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    return urllib.request.urlopen(req, timeout=timeout)
 
 
 def fetch_spy_closes() -> list[dict]:
-    with _urlopen(STOOQ_URL, timeout=30) as resp:
-        text = resp.read().decode("utf-8")
-    lines = text.strip().splitlines()
-    header = lines[0].split(",")
-    idx_date = header.index("Date")
-    idx_close = header.index("Close")
+    url = YAHOO_URL.format(now=int(time.time()))
+    with _urlopen(url, timeout=30) as resp:
+        payload = json.loads(resp.read())
+    chart = payload.get("chart") or {}
+    if chart.get("error"):
+        raise RuntimeError(f"Yahoo chart error: {chart['error']}")
+    result = (chart.get("result") or [None])[0]
+    if not result:
+        raise RuntimeError("Yahoo chart response had no result")
+    timestamps = result.get("timestamp") or []
+    closes = result["indicators"]["quote"][0].get("close") or []
     rows = []
-    for line in lines[1:]:
-        parts = line.split(",")
-        if len(parts) < max(idx_date, idx_close) + 1:
+    for ts, close in zip(timestamps, closes):
+        if close is None:
             continue
-        try:
-            close = float(parts[idx_close])
-        except ValueError:
-            continue
-        rows.append({"date": parts[idx_date], "close": close})
+        d = datetime.fromtimestamp(ts, tz=timezone.utc).date().isoformat()
+        rows.append({"date": d, "close": float(close)})
     rows.sort(key=lambda r: r["date"])
     return rows
 
