@@ -57,3 +57,26 @@ def test_main_errors_on_empty_dir(tmp_path: Path, monkeypatch):
     empty.mkdir()
     with pytest.raises(FileNotFoundError):
         backfill_nav.main([str(empty)])
+
+
+def test_skips_leading_zero_balance_days(tmp_path: Path):
+    """Pre-funding rows (total=0) at the start of history must be dropped to
+    avoid a divide-by-zero when re-anchoring the pct series."""
+    d = tmp_path / "backfill"
+    d.mkdir()
+    (d / "early.xml").write_text(
+        """<?xml version="1.0" encoding="UTF-8"?>
+<FlexQueryResponse><FlexStatements><FlexStatement>
+<EquitySummaryInBase>
+<EquitySummaryByReportDateInBase reportDate="2022-01-03" total="0" totalLong="0" totalShort="0" />
+<EquitySummaryByReportDateInBase reportDate="2022-01-04" total="0" totalLong="0" totalShort="0" />
+<EquitySummaryByReportDateInBase reportDate="2022-01-05" total="50000" totalLong="50000" totalShort="0" />
+<EquitySummaryByReportDateInBase reportDate="2022-01-06" total="55000" totalLong="55000" totalShort="0" />
+</EquitySummaryInBase>
+</FlexStatement></FlexStatements></FlexQueryResponse>""",
+        encoding="utf-8",
+    )
+    merged = backfill_nav.merge_xml_dir(d)
+    assert merged[0]["date"] == "2022-01-05"
+    assert merged[0]["total"] == 50000
+    assert len(merged) == 2

@@ -18,7 +18,12 @@ from scripts import nav_history, parse
 
 
 def merge_xml_dir(directory: Path) -> list[dict]:
-    """Read every *.xml in directory, return a deduped, ascending-sorted dollar NAV list."""
+    """Read every *.xml in directory, return a deduped, ascending-sorted dollar NAV list.
+
+    Leading rows with total <= 0 are dropped — these represent days before the
+    account was funded and would otherwise anchor the pct series at zero,
+    causing a divide-by-zero in to_performance_series.
+    """
     files = sorted(directory.glob("*.xml"))
     if not files:
         raise FileNotFoundError(f"no *.xml files found in {directory}")
@@ -27,7 +32,10 @@ def merge_xml_dir(directory: Path) -> list[dict]:
         parsed = parse.parse_flex_xml(path.read_text(encoding="utf-8"))
         for row in parsed["nav"]:
             by_date[row["date"]] = row  # later files win on conflict
-    return sorted(by_date.values(), key=lambda r: r["date"])
+    rows = sorted(by_date.values(), key=lambda r: r["date"])
+    while rows and rows[0]["total"] <= 0:
+        rows.pop(0)
+    return rows
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -45,7 +53,7 @@ def main(argv: list[str] | None = None) -> int:
     nav_history.save(data / "nav_history.json", merged)
     nav_history.save(data / "nav_history_pct.json", pct)
 
-    print(f"merged {len(merged)} unique trading days  ·  {merged[0]['date']} → {merged[-1]['date']}")
+    print(f"merged {len(merged)} unique trading days  |  {merged[0]['date']} -> {merged[-1]['date']}")
     print(f"re-anchored pct ledger:  row[0] = 0.0%   row[-1] = {pct[-1]['return_pct']}%")
     return 0
 
