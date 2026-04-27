@@ -181,7 +181,6 @@ function renderChart(series) {
         label: "S&P 500",
         stroke: "#4ad6ff",
         width: 2,
-        dash: [4, 4],
         points: { show: false },
       },
     ],
