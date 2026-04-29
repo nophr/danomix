@@ -1,117 +1,117 @@
 {
   "version": 1,
-  "updated_at": "2026-04-28",
+  "updated_at": "2026-04-29",
   "inception_date": "2022-01-05",
   "nav": {
-    "leverage": 2.62
+    "leverage": 2.65
   },
   "holdings": [
     {
       "symbol": "GOOGL",
       "display": "GOOGL",
       "asset_class": "STK",
-      "percent": 18.84
+      "percent": 19.01
     },
     {
       "symbol": "META",
       "display": "META",
       "asset_class": "STK",
-      "percent": 10.01
+      "percent": 10.0
     },
     {
       "symbol": "AMD",
       "display": "AMD",
       "asset_class": "STK",
-      "percent": 9.87
+      "percent": 9.63
     },
     {
       "symbol": "AMZN",
       "display": "AMZN",
       "asset_class": "STK",
-      "percent": 9.06
+      "percent": 9.11
     },
     {
       "symbol": "MSFT",
       "display": "MSFT",
       "asset_class": "STK",
-      "percent": 8.11
+      "percent": 8.28
     },
     {
       "symbol": "NVDA",
       "display": "NVDA",
       "asset_class": "STK",
-      "percent": 7.52
-    },
-    {
-      "symbol": "RDDT",
-      "display": "RDDT",
-      "asset_class": "STK",
-      "percent": 6.39
+      "percent": 7.47
     },
     {
       "symbol": "UNH",
       "display": "UNH",
       "asset_class": "STK",
-      "percent": 6.15
+      "percent": 6.43
+    },
+    {
+      "symbol": "RDDT",
+      "display": "RDDT",
+      "asset_class": "STK",
+      "percent": 5.97
     },
     {
       "symbol": "UI",
       "display": "UI",
       "asset_class": "STK",
-      "percent": 5.78
+      "percent": 5.58
     },
     {
       "symbol": "PLTR",
       "display": "PLTR",
       "asset_class": "STK",
-      "percent": 5.21
+      "percent": 5.2
     },
     {
       "symbol": "AAPL",
       "display": "AAPL",
       "asset_class": "STK",
-      "percent": 4.64
+      "percent": 4.75
     },
     {
       "symbol": "CRM",
       "display": "CRM",
       "asset_class": "STK",
-      "percent": 3.13
+      "percent": 3.18
     },
     {
       "symbol": "NVO",
       "display": "NVO",
       "asset_class": "STK",
-      "percent": 1.43
+      "percent": 1.44
     },
     {
       "symbol": "BB",
       "display": "BB",
       "asset_class": "STK",
-      "percent": 1.07
-    },
-    {
-      "symbol": "LUMN_270115C10",
-      "display": "LUMN Jan'27 $10C",
-      "asset_class": "OPT",
-      "percent": 0.88,
-      "option": {
-        "underlying": "LUMN",
-        "expiry": "2027-01-15",
-        "type": "call",
-        "strike": 10
-      }
+      "percent": 1.04
     },
     {
       "symbol": "UNH_270115C450",
       "display": "UNH Jan'27 $450C",
       "asset_class": "OPT",
-      "percent": 0.77,
+      "percent": 0.96,
       "option": {
         "underlying": "UNH",
         "expiry": "2027-01-15",
         "type": "call",
         "strike": 450
+      }
+    },
+    {
+      "symbol": "LUMN_270115C10",
+      "display": "LUMN Jan'27 $10C",
+      "asset_class": "OPT",
+      "percent": 0.81,
+      "option": {
+        "underlying": "LUMN",
+        "expiry": "2027-01-15",
+        "type": "call",
+        "strike": 10
       }
     },
     {
@@ -130,7 +130,7 @@
       "symbol": "NVO_270115C90",
       "display": "NVO Jan'27 $90C",
       "asset_class": "OPT",
-      "percent": 0.08,
+      "percent": 0.09,
       "option": {
         "underlying": "NVO",
         "expiry": "2027-01-15",
@@ -4636,6 +4636,10 @@
       {
         "date": "2026-04-27",
         "return_pct": 161.38
+      },
+      {
+        "date": "2026-04-28",
+        "return_pct": 156.71
       }
     ],
     "benchmark": {
@@ -8964,6 +8968,10 @@
         {
           "date": "2026-04-28",
           "return_pct": 51.95
+        },
+        {
+          "date": "2026-04-29",
+          "return_pct": 51.92
         }
       ]
     }
