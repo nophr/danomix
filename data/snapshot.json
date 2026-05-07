@@ -1,100 +1,115 @@
 {
   "version": 1,
-  "updated_at": "2026-05-06",
+  "updated_at": "2026-05-07",
   "inception_date": "2022-01-05",
   "nav": {
-    "leverage": 2.56
+    "leverage": 2.5
   },
   "holdings": [
     {
       "symbol": "GOOGL",
       "display": "GOOGL",
       "asset_class": "STK",
-      "percent": 20.44
+      "percent": 20.31,
+      "price": 398.04
     },
     {
       "symbol": "AMD",
       "display": "AMD",
       "asset_class": "STK",
-      "percent": 10.25
+      "percent": 11.79,
+      "price": 421.39
     },
     {
       "symbol": "AMZN",
       "display": "AMZN",
       "asset_class": "STK",
-      "percent": 9.29
+      "percent": 9.05,
+      "price": 274.99
     },
     {
       "symbol": "META",
       "display": "META",
       "asset_class": "STK",
-      "percent": 8.73
+      "percent": 8.57,
+      "price": 612.88
     },
     {
       "symbol": "MSFT",
       "display": "MSFT",
       "asset_class": "STK",
-      "percent": 7.68
-    },
-    {
-      "symbol": "RDDT",
-      "display": "RDDT",
-      "asset_class": "STK",
-      "percent": 6.7
+      "percent": 7.5,
+      "price": 413.96
     },
     {
       "symbol": "NVDA",
       "display": "NVDA",
       "asset_class": "STK",
-      "percent": 6.67
+      "percent": 6.84,
+      "price": 207.83
+    },
+    {
+      "symbol": "RDDT",
+      "display": "RDDT",
+      "asset_class": "STK",
+      "percent": 6.31,
+      "price": 166.56
     },
     {
       "symbol": "UNH",
       "display": "UNH",
       "asset_class": "STK",
-      "percent": 6.18
+      "percent": 6.05,
+      "price": 367.28
     },
     {
       "symbol": "UI",
       "display": "UI",
       "asset_class": "STK",
-      "percent": 5.68
-    },
-    {
-      "symbol": "PLTR",
-      "display": "PLTR",
-      "asset_class": "STK",
-      "percent": 4.84
+      "percent": 5.59,
+      "price": 1028.31
     },
     {
       "symbol": "AAPL",
       "display": "AAPL",
       "asset_class": "STK",
-      "percent": 4.82
+      "percent": 4.73,
+      "price": 287.51
+    },
+    {
+      "symbol": "PLTR",
+      "display": "PLTR",
+      "asset_class": "STK",
+      "percent": 4.62,
+      "price": 133.79
     },
     {
       "symbol": "CRM",
       "display": "CRM",
       "asset_class": "STK",
-      "percent": 3.17
+      "percent": 2.98,
+      "price": 181.19
     },
     {
       "symbol": "NVO",
       "display": "NVO",
       "asset_class": "STK",
-      "percent": 1.52
+      "percent": 1.51,
+      "price": 45.76
     },
     {
       "symbol": "BB",
       "display": "BB",
       "asset_class": "STK",
-      "percent": 1.1
+      "percent": 1.14,
+      "price": 5.99
     },
     {
       "symbol": "LUMN_270115C10",
       "display": "LUMN Jan'27 $10C",
       "asset_class": "OPT",
-      "percent": 0.93,
+      "percent": 1.04,
+      "price": 252.07,
       "option": {
         "underlying": "LUMN",
         "expiry": "2027-01-15",
@@ -103,16 +118,11 @@
       }
     },
     {
-      "symbol": "BMNR",
-      "display": "BMNR",
-      "asset_class": "STK",
-      "percent": 0.78
-    },
-    {
       "symbol": "UNH_270115C450",
       "display": "UNH Jan'27 $450C",
       "asset_class": "OPT",
-      "percent": 0.78,
+      "percent": 0.82,
+      "price": 1239.98,
       "option": {
         "underlying": "UNH",
         "expiry": "2027-01-15",
@@ -121,16 +131,25 @@
       }
     },
     {
+      "symbol": "BMNR",
+      "display": "BMNR",
+      "asset_class": "STK",
+      "percent": 0.75,
+      "price": 22.91
+    },
+    {
       "symbol": "FIG",
       "display": "FIG",
       "asset_class": "STK",
-      "percent": 0.33
+      "percent": 0.32,
+      "price": 19.29
     },
     {
       "symbol": "NVO_270115C90",
       "display": "NVO Jan'27 $90C",
       "asset_class": "OPT",
-      "percent": 0.1,
+      "percent": 0.09,
+      "price": 53.02,
       "option": {
         "underlying": "NVO",
         "expiry": "2027-01-15",
@@ -4660,6 +4679,10 @@
       {
         "date": "2026-05-05",
         "return_pct": 171.86
+      },
+      {
+        "date": "2026-05-06",
+        "return_pct": 183.39
       }
     ],
     "benchmark": {
@@ -9012,9 +9035,14 @@
         {
           "date": "2026-05-06",
           "return_pct": 56.67
+        },
+        {
+          "date": "2026-05-07",
+          "return_pct": 56.19
         }
       ]
     }
   },
+  "big_movers": [],
   "recent_moves": []
 }
