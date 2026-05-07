@@ -42,17 +42,78 @@ function renderHeaderChips(snap) {
     "Leverage " + snap.nav.leverage.toFixed(2) + "×";
 }
 
+function highlightHolding(idx) {
+  document.querySelectorAll("#holdingRows .pg-row").forEach((row, i) => {
+    row.classList.toggle("is-hover", i === idx);
+  });
+  document.querySelectorAll("#donut svg circle[data-idx]").forEach((slice, i) => {
+    slice.classList.toggle("is-hover", i === idx);
+  });
+}
+
 function renderDonut(holdings) {
   const el = document.getElementById("donut");
+  el.style.background = "transparent";
+  el.querySelectorAll("svg, .pg-donut-tip").forEach(n => n.remove());
+
+  const NS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(NS, "svg");
+  svg.setAttribute("viewBox", "0 0 36 36");
+  svg.setAttribute("class", "pg-donut-svg");
+
+  const track = document.createElementNS(NS, "circle");
+  track.setAttribute("cx", "18"); track.setAttribute("cy", "18"); track.setAttribute("r", "15.9155");
+  track.setAttribute("class", "pg-donut-track");
+  svg.appendChild(track);
+
   let acc = 0;
-  const stops = holdings.map((h, i) => {
-    const from = acc;
+  holdings.forEach((h, i) => {
+    const slice = document.createElementNS(NS, "circle");
+    slice.setAttribute("cx", "18"); slice.setAttribute("cy", "18"); slice.setAttribute("r", "15.9155");
+    slice.setAttribute("class", "pg-donut-slice");
+    slice.setAttribute("stroke", PALETTE[i % PALETTE.length]);
+    slice.setAttribute("stroke-dasharray", `${h.percent} ${100 - h.percent}`);
+    slice.setAttribute("stroke-dashoffset", `${25 - acc}`);
+    slice.dataset.idx = i;
+    slice.dataset.symbol = h.display;
+    slice.dataset.percent = h.percent.toFixed(1);
+    svg.appendChild(slice);
     acc += h.percent;
-    const color = PALETTE[i % PALETTE.length];
-    return `${color} ${from}% ${acc}%`;
   });
-  if (acc < 100) stops.push(`#2b244a ${acc}% 100%`);
-  el.style.background = `conic-gradient(${stops.join(",")})`;
+
+  const center = el.querySelector(".pg-donut-center");
+  el.insertBefore(svg, center);
+
+  const tip = document.createElement("div");
+  tip.className = "pg-donut-tip";
+  el.appendChild(tip);
+
+  const showTip = (slice, x, y) => {
+    tip.innerHTML =
+      `<span class="pg-donut-tip-sym">${slice.dataset.symbol}</span>` +
+      `<span class="pg-donut-tip-pct">${slice.dataset.percent}%</span>`;
+    const rect = el.getBoundingClientRect();
+    tip.style.left = (x - rect.left) + "px";
+    tip.style.top = (y - rect.top) + "px";
+    tip.classList.add("is-visible");
+  };
+
+  svg.querySelectorAll("circle[data-idx]").forEach(slice => {
+    slice.addEventListener("mouseenter", e => {
+      showTip(slice, e.clientX, e.clientY);
+      highlightHolding(parseInt(slice.dataset.idx));
+    });
+    slice.addEventListener("mousemove", e => showTip(slice, e.clientX, e.clientY));
+    slice.addEventListener("mouseleave", () => {
+      tip.classList.remove("is-visible");
+      highlightHolding(-1);
+    });
+    slice.addEventListener("click", e => {
+      showTip(slice, e.clientX, e.clientY);
+      highlightHolding(parseInt(slice.dataset.idx));
+    });
+  });
+
   document.getElementById("holdingCount").textContent = holdings.length;
 }
 
@@ -68,6 +129,33 @@ function renderHoldingRows(holdings) {
       <span class="sym">${h.display}</span>
       <span class="bar"><span style="width:${Math.min(h.percent, 100)}%"></span></span>
       <span class="pct">${h.percent.toFixed(1)}%</span>
+    `;
+    host.appendChild(row);
+  });
+}
+
+function renderBigMovers(movers) {
+  const host = document.getElementById("bigMovers");
+  if (!host) return;
+  host.innerHTML = "";
+  if (!movers || !movers.length) {
+    host.innerHTML = `<div class="pg-empty">No holdings moved 5% or more today.</div>`;
+    return;
+  }
+  movers.forEach(m => {
+    const up = m.change_pct >= 0;
+    const sign = up ? "+" : "";
+    const arrow = up ? "▲" : "▼";
+    const chgClass = up ? "chg-pos" : "chg-neg";
+    const row = document.createElement("div");
+    row.className = "pg-mover";
+    row.innerHTML = `
+      <div class="pg-mover-icon ${chgClass}">${arrow}</div>
+      <div class="pg-mover-body">
+        <span class="sym">${m.display}</span>
+        <span class="pg-mover-meta">${m.percent.toFixed(1)}% of portfolio</span>
+      </div>
+      <div class="pg-mover-pct ${chgClass}">${sign}${m.change_pct.toFixed(2)}%</div>
     `;
     host.appendChild(row);
   });
@@ -319,6 +407,7 @@ async function main() {
 
   renderHeaderChips(snap);
   renderHero(snap, "all");
+  renderBigMovers(snap.big_movers);
   renderDonut(snap.holdings);
   renderHoldingRows(snap.holdings);
   renderMoves(snap.recent_moves);

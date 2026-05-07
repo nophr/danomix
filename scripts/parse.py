@@ -23,6 +23,7 @@ def parse_flex_xml(xml_text: str) -> dict:
         positions.append({
             "symbol":         p.attrib["symbol"],
             "asset_category": p.attrib["assetCategory"],
+            "position":       float(p.attrib["position"]),
             "position_value": float(p.attrib["positionValue"]),
             "currency":       p.attrib.get("currency", "USD"),
         })

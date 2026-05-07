@@ -17,11 +17,14 @@ def build_holdings(positions: list[dict]) -> list[dict]:
     out = []
     for p in positions:
         percent = round(p["position_value"] / gross_long * 100, 2)
+        shares = p.get("position") or 0
+        price = round(p["position_value"] / shares, 4) if shares else None
         row = {
             "symbol":      p["symbol"],
             "display":     p["symbol"],
             "asset_class": p["asset_category"],
             "percent":     percent,
+            "price":       price,
         }
         if p["asset_category"] == "OPT":
             parsed_opt = parse_option_symbol(p["symbol"])

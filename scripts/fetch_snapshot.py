@@ -24,7 +24,7 @@ from datetime import date
 from pathlib import Path
 from typing import Optional
 
-from scripts import flex, parse, transform, nav_history, moves, benchmark
+from scripts import flex, parse, transform, nav_history, moves, big_movers, benchmark
 
 DATA = Path("data")
 SNAPSHOT_PATH       = DATA / "snapshot.json"
@@ -36,7 +36,8 @@ VERSION = 1
 
 
 def build_snapshot(*, flex_xml: str, pct_series: list[dict], latest_nav: dict,
-                   spy_series: list[dict], prior_holdings: Optional[list[dict]], today: str) -> dict:
+                   spy_series: list[dict], prior_holdings: Optional[list[dict]],
+                   today: str, yesterday_holdings: Optional[list[dict]] = None) -> dict:
     parsed = parse.parse_flex_xml(flex_xml)
     holdings = transform.build_holdings(parsed["positions"])
 
@@ -49,6 +50,9 @@ def build_snapshot(*, flex_xml: str, pct_series: list[dict], latest_nav: dict,
     else:
         recent = moves.classify_moves(holdings, prior_holdings, as_of=today)
 
+    # Big movers: empty until a yesterday snapshot with price fields exists.
+    movers = big_movers.compute(holdings, yesterday_holdings) if yesterday_holdings else []
+
     return {
         "version":        VERSION,
         "updated_at":     today,
@@ -59,6 +63,7 @@ def build_snapshot(*, flex_xml: str, pct_series: list[dict], latest_nav: dict,
             "portfolio": pct_series,
             "benchmark": {"ticker": "SPY", "series": spy_series},
         },
+        "big_movers":   movers,
         "recent_moves": recent,
     }
 
@@ -78,10 +83,23 @@ def _load_prior_holdings_30d_ago() -> Optional[list[dict]]:
 
     Returns a list (possibly empty) when a baseline was actually found.
     """
+    return _load_prior_holdings("30 days ago")
+
+
+def _load_prior_holdings_yesterday() -> Optional[list[dict]]:
+    """Read data/snapshot.json as it existed ~1 day ago via git history.
+
+    Used to compute day-over-day price moves. Returns None until at least one
+    daily snapshot containing the new `price` field has been committed.
+    """
+    return _load_prior_holdings("1 day ago")
+
+
+def _load_prior_holdings(before: str) -> Optional[list[dict]]:
     import subprocess
     try:
         sha = subprocess.run(
-            ["git", "rev-list", "-1", "--before=30 days ago", "HEAD"],
+            ["git", "rev-list", "-1", f"--before={before}", "HEAD"],
             capture_output=True, text=True, check=True,
         ).stdout.strip()
         if not sha:
@@ -143,8 +161,10 @@ def main() -> int:
         closes = json.loads(BENCHMARK_PATH.read_text(encoding="utf-8"))
         spy_series = benchmark.to_return_series(closes, inception_date=inception)
 
-    # 5+6. Build snapshot and write — prior holdings come from ~30 days ago in git
+    # 5+6. Build snapshot and write — prior holdings come from ~30 days ago in git;
+    # yesterday's holdings power the "big movers" day-over-day price diff.
     prior_holdings = _load_prior_holdings_30d_ago()
+    yesterday_holdings = _load_prior_holdings_yesterday()
     today = date.today().isoformat()
     snap = build_snapshot(
         flex_xml=xml_bytes.decode("utf-8"),
@@ -152,6 +172,7 @@ def main() -> int:
         latest_nav=latest_nav,
         spy_series=spy_series,
         prior_holdings=prior_holdings,
+        yesterday_holdings=yesterday_holdings,
         today=today,
     )
     _atomic_write_json(SNAPSHOT_PATH, snap)
