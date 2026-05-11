@@ -1,115 +1,115 @@
 {
   "version": 1,
-  "updated_at": "2026-05-08",
+  "updated_at": "2026-05-11",
   "inception_date": "2022-01-05",
   "nav": {
-    "leverage": 2.51
+    "leverage": 2.5
   },
   "holdings": [
     {
       "symbol": "GOOGL",
       "display": "GOOGL",
       "asset_class": "STK",
-      "percent": 20.49,
-      "price": 397.99
+      "percent": 20.41,
+      "price": 400.8
     },
     {
       "symbol": "AMD",
       "display": "AMD",
       "asset_class": "STK",
-      "percent": 11.53,
-      "price": 408.46
+      "percent": 12.71,
+      "price": 455.19
     },
     {
       "symbol": "AMZN",
       "display": "AMZN",
       "asset_class": "STK",
-      "percent": 9.01,
-      "price": 271.17
+      "percent": 8.96,
+      "price": 272.68
     },
     {
       "symbol": "META",
       "display": "META",
       "asset_class": "STK",
-      "percent": 8.71,
-      "price": 616.81
+      "percent": 8.51,
+      "price": 609.63
     },
     {
       "symbol": "MSFT",
       "display": "MSFT",
       "asset_class": "STK",
-      "percent": 7.69,
-      "price": 420.77
+      "percent": 7.5,
+      "price": 415.12
     },
     {
       "symbol": "NVDA",
       "display": "NVDA",
       "asset_class": "STK",
-      "percent": 7.03,
-      "price": 211.5
-    },
-    {
-      "symbol": "RDDT",
-      "display": "RDDT",
-      "asset_class": "STK",
-      "percent": 6.26,
-      "price": 163.95
+      "percent": 7.07,
+      "price": 215.2
     },
     {
       "symbol": "UNH",
       "display": "UNH",
       "asset_class": "STK",
-      "percent": 6.14,
-      "price": 369.74
+      "percent": 6.24,
+      "price": 379.98
     },
     {
-      "symbol": "UI",
-      "display": "UI",
+      "symbol": "RDDT",
+      "display": "RDDT",
       "asset_class": "STK",
-      "percent": 5.08,
-      "price": 926.69
-    },
-    {
-      "symbol": "PLTR",
-      "display": "PLTR",
-      "asset_class": "STK",
-      "percent": 4.78,
-      "price": 137.05
+      "percent": 5.89,
+      "price": 155.8
     },
     {
       "symbol": "AAPL",
       "display": "AAPL",
       "asset_class": "STK",
-      "percent": 4.77,
-      "price": 287.44
+      "percent": 4.82,
+      "price": 293.32
+    },
+    {
+      "symbol": "PLTR",
+      "display": "PLTR",
+      "asset_class": "STK",
+      "percent": 4.75,
+      "price": 137.8
+    },
+    {
+      "symbol": "UI",
+      "display": "UI",
+      "asset_class": "STK",
+      "percent": 4.56,
+      "price": 842.1
     },
     {
       "symbol": "CRM",
       "display": "CRM",
       "asset_class": "STK",
-      "percent": 3.1,
-      "price": 186.34
+      "percent": 2.99,
+      "price": 181.82
     },
     {
       "symbol": "NVO",
       "display": "NVO",
       "asset_class": "STK",
-      "percent": 1.52,
-      "price": 45.8
+      "percent": 1.51,
+      "price": 46.07
     },
     {
       "symbol": "BB",
       "display": "BB",
       "asset_class": "STK",
-      "percent": 1.17,
-      "price": 6.1
+      "percent": 1.21,
+      "price": 6.37
     },
     {
       "symbol": "UNH_270115C450",
       "display": "UNH Jan'27 $450C",
       "asset_class": "OPT",
-      "percent": 0.85,
-      "price": 1277.19,
+      "percent": 1.04,
+      "price": 1590.0,
       "option": {
         "underlying": "UNH",
         "expiry": "2027-01-15",
@@ -122,14 +122,14 @@
       "display": "BMNR",
       "asset_class": "STK",
       "percent": 0.73,
-      "price": 22.0
+      "price": 22.17
     },
     {
       "symbol": "LUMN_270115C10",
       "display": "LUMN Jan'27 $10C",
       "asset_class": "OPT",
-      "percent": 0.71,
-      "price": 170.75,
+      "percent": 0.68,
+      "price": 165.11,
       "option": {
         "underlying": "LUMN",
         "expiry": "2027-01-15",
@@ -142,14 +142,14 @@
       "display": "FIG",
       "asset_class": "STK",
       "percent": 0.34,
-      "price": 20.56
+      "price": 20.66
     },
     {
       "symbol": "NVO_270115C90",
       "display": "NVO Jan'27 $90C",
       "asset_class": "OPT",
-      "percent": 0.09,
-      "price": 52.51,
+      "percent": 0.08,
+      "price": 51.67,
       "option": {
         "underlying": "NVO",
         "expiry": "2027-01-15",
@@ -4687,6 +4687,10 @@
       {
         "date": "2026-05-07",
         "return_pct": 180.86
+      },
+      {
+        "date": "2026-05-08",
+        "return_pct": 183.77
       }
     ],
     "benchmark": {
@@ -9047,10 +9051,36 @@
         {
           "date": "2026-05-08",
           "return_pct": 57.48
+        },
+        {
+          "date": "2026-05-11",
+          "return_pct": 57.84
         }
       ]
     }
   },
-  "big_movers": [],
+  "big_movers": [
+    {
+      "symbol": "UNH_270115C450",
+      "display": "UNH Jan'27 $450C",
+      "asset_class": "OPT",
+      "percent": 1.04,
+      "change_pct": 24.49
+    },
+    {
+      "symbol": "AMD",
+      "display": "AMD",
+      "asset_class": "STK",
+      "percent": 12.71,
+      "change_pct": 11.44
+    },
+    {
+      "symbol": "UI",
+      "display": "UI",
+      "asset_class": "STK",
+      "percent": 4.56,
+      "change_pct": -9.13
+    }
+  ],
   "recent_moves": []
 }
