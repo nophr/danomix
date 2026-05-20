@@ -1,101 +1,101 @@
 {
   "version": 1,
-  "updated_at": "2026-05-19",
+  "updated_at": "2026-05-20",
   "inception_date": "2022-01-05",
   "nav": {
-    "leverage": 3.22
+    "leverage": 3.25
   },
   "holdings": [
     {
       "symbol": "GOOGL",
       "display": "GOOGL",
       "asset_class": "STK",
-      "percent": 21.95,
-      "price": 396.94
+      "percent": 21.76,
+      "price": 387.66
     },
     {
       "symbol": "AMD",
       "display": "AMD",
       "asset_class": "STK",
-      "percent": 12.77,
-      "price": 420.99
+      "percent": 12.74,
+      "price": 414.05
     },
     {
       "symbol": "AMZN",
       "display": "AMZN",
       "asset_class": "STK",
-      "percent": 9.45,
-      "price": 264.86
+      "percent": 9.39,
+      "price": 259.34
     },
     {
       "symbol": "META",
       "display": "META",
       "asset_class": "STK",
       "percent": 9.27,
-      "price": 611.21
+      "price": 602.61
     },
     {
       "symbol": "MSFT",
       "display": "MSFT",
       "asset_class": "STK",
       "percent": 8.31,
-      "price": 423.54
+      "price": 417.42
     },
     {
       "symbol": "NVDA",
       "display": "NVDA",
       "asset_class": "STK",
-      "percent": 7.93,
-      "price": 222.32
+      "percent": 7.99,
+      "price": 220.61
     },
     {
       "symbol": "UNH",
       "display": "UNH",
       "asset_class": "STK",
-      "percent": 6.98,
-      "price": 391.13
+      "percent": 7.05,
+      "price": 389.24
     },
     {
       "symbol": "RDDT",
       "display": "RDDT",
       "asset_class": "STK",
-      "percent": 6.53,
-      "price": 159.11
+      "percent": 6.45,
+      "price": 154.88
     },
     {
       "symbol": "AAPL",
       "display": "AAPL",
       "asset_class": "STK",
-      "percent": 5.31,
-      "price": 297.84
+      "percent": 5.41,
+      "price": 298.97
     },
     {
       "symbol": "PLTR",
       "display": "PLTR",
       "asset_class": "STK",
-      "percent": 5.06,
-      "price": 135.14
+      "percent": 5.14,
+      "price": 135.26
     },
     {
       "symbol": "UI",
       "display": "UI",
       "asset_class": "STK",
-      "percent": 3.56,
-      "price": 604.0
+      "percent": 3.49,
+      "price": 583.9
     },
     {
       "symbol": "CRM",
       "display": "CRM",
       "asset_class": "STK",
-      "percent": 3.2,
-      "price": 179.48
+      "percent": 3.25,
+      "price": 179.42
     },
     {
       "symbol": "UNH_260529C400",
       "display": "UNH May'26 $400C",
       "asset_class": "OPT",
-      "percent": -0.07,
-      "price": 412.5,
+      "percent": -0.06,
+      "price": 333.2,
       "option": {
         "underlying": "UNH",
         "expiry": "2026-05-29",
@@ -107,8 +107,8 @@
       "symbol": "PLTR_260529C141",
       "display": "PLTR May'26 $141C",
       "asset_class": "OPT",
-      "percent": -0.08,
-      "price": 221.0,
+      "percent": -0.07,
+      "price": 205.0,
       "option": {
         "underlying": "PLTR",
         "expiry": "2026-05-29",
@@ -120,8 +120,8 @@
       "symbol": "AMD_260529C450",
       "display": "AMD May'26 $450C",
       "asset_class": "OPT",
-      "percent": -0.17,
-      "price": 978.14,
+      "percent": -0.13,
+      "price": 718.21,
       "option": {
         "underlying": "AMD",
         "expiry": "2026-05-29",
@@ -4687,6 +4687,10 @@
       {
         "date": "2026-05-18",
         "return_pct": 181.39
+      },
+      {
+        "date": "2026-05-19",
+        "return_pct": 177.78
       }
     ],
     "benchmark": {
@@ -9075,10 +9079,36 @@
         {
           "date": "2026-05-19",
           "return_pct": 56.65
+        },
+        {
+          "date": "2026-05-20",
+          "return_pct": 58.26
         }
       ]
     }
   },
-  "big_movers": [],
+  "big_movers": [
+    {
+      "symbol": "AMD_260529C450",
+      "display": "AMD May'26 $450C",
+      "asset_class": "OPT",
+      "percent": -0.13,
+      "change_pct": -26.57
+    },
+    {
+      "symbol": "UNH_260529C400",
+      "display": "UNH May'26 $400C",
+      "asset_class": "OPT",
+      "percent": -0.06,
+      "change_pct": -19.22
+    },
+    {
+      "symbol": "PLTR_260529C141",
+      "display": "PLTR May'26 $141C",
+      "asset_class": "OPT",
+      "percent": -0.07,
+      "change_pct": -7.24
+    }
+  ],
   "recent_moves": []
 }
