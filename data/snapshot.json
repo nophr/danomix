@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "updated_at": "2026-05-25",
+  "updated_at": "2026-05-26",
   "inception_date": "2022-01-05",
   "nav": {
-    "leverage": 4.75
+    "leverage": 4.82
   },
   "holdings": [
     {
@@ -4703,6 +4703,10 @@
       {
         "date": "2026-05-22",
         "return_pct": 182.62
+      },
+      {
+        "date": "2026-05-25",
+        "return_pct": 177.27
       }
     ],
     "benchmark": {
@@ -9103,39 +9107,14 @@
         {
           "date": "2026-05-22",
           "return_pct": 59.2
+        },
+        {
+          "date": "2026-05-26",
+          "return_pct": 60.25
         }
       ]
     }
   },
-  "big_movers": [
-    {
-      "symbol": "AMD_260529C450",
-      "display": "AMD May'26 $450C",
-      "asset_class": "OPT",
-      "percent": -0.48,
-      "change_pct": 59.77
-    },
-    {
-      "symbol": "UNH_260529C400",
-      "display": "UNH May'26 $400C",
-      "asset_class": "OPT",
-      "percent": -0.02,
-      "change_pct": 46.04
-    },
-    {
-      "symbol": "PLTR_260529C141",
-      "display": "PLTR May'26 $141C",
-      "asset_class": "OPT",
-      "percent": -0.05,
-      "change_pct": -27.06
-    },
-    {
-      "symbol": "RDDT",
-      "display": "RDDT",
-      "asset_class": "STK",
-      "percent": 5.83,
-      "change_pct": -5.58
-    }
-  ],
+  "big_movers": [],
   "recent_moves": []
 }
