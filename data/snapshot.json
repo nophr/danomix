@@ -1,66 +1,66 @@
 {
   "version": 1,
-  "updated_at": "2026-06-12",
+  "updated_at": "2026-06-15",
   "inception_date": "2022-01-05",
   "nav": {
-    "leverage": 4.76
+    "leverage": 4.81
   },
   "holdings": [
     {
       "symbol": "GOOGL",
       "display": "GOOGL",
       "asset_class": "STK",
-      "percent": 21.19,
-      "price": 357.77
-    },
-    {
-      "symbol": "AMZN",
-      "display": "AMZN",
-      "asset_class": "STK",
-      "percent": 14.31,
-      "price": 241.51
+      "percent": 21.44,
+      "price": 359.68
     },
     {
       "symbol": "META",
       "display": "META",
       "asset_class": "STK",
-      "percent": 14.31,
-      "price": 568.43
+      "percent": 14.36,
+      "price": 566.98
+    },
+    {
+      "symbol": "AMZN",
+      "display": "AMZN",
+      "asset_class": "STK",
+      "percent": 14.22,
+      "price": 238.55
     },
     {
       "symbol": "NVDA",
       "display": "NVDA",
       "asset_class": "STK",
-      "percent": 12.14,
-      "price": 204.87
+      "percent": 12.23,
+      "price": 205.19
     },
     {
       "symbol": "UNH",
       "display": "UNH",
       "asset_class": "STK",
-      "percent": 12.01,
-      "price": 405.55
+      "percent": 12.18,
+      "price": 408.52
     },
     {
       "symbol": "RDDT",
       "display": "RDDT",
       "asset_class": "STK",
-      "percent": 11.8,
-      "price": 173.26
+      "percent": 11.11,
+      "price": 162.1
     },
     {
       "symbol": "AMD",
       "display": "AMD",
       "asset_class": "STK",
-      "percent": 10.13,
-      "price": 488.45
+      "percent": 10.67,
+      "price": 511.57
     },
     {
       "symbol": "BB_270115C10",
       "display": "BB Jan'27 $10C",
       "asset_class": "OPT",
-      "percent": 2.4,
-      "price": 245.24,
+      "percent": 2.35,
+      "price": 239.13,
       "option": {
         "underlying": "BB",
         "expiry": "2027-01-15",
@@ -72,8 +72,8 @@
       "symbol": "MSTR_260702P130",
       "display": "MSTR Jul'26 $130P",
       "asset_class": "OPT",
-      "percent": 1.71,
-      "price": 1446.05,
+      "percent": 1.43,
+      "price": 1199.14,
       "option": {
         "underlying": "MSTR",
         "expiry": "2026-07-02",
@@ -4711,6 +4711,10 @@
       {
         "date": "2026-06-11",
         "return_pct": 177.1
+      },
+      {
+        "date": "2026-06-12",
+        "return_pct": 172.93
       }
     ],
     "benchmark": {
@@ -9167,6 +9171,10 @@
         {
           "date": "2026-06-12",
           "return_pct": 58.37
+        },
+        {
+          "date": "2026-06-15",
+          "return_pct": 61.16
         }
       ]
     }
@@ -9176,155 +9184,155 @@
       "symbol": "MSTR_260702P130",
       "display": "MSTR Jul'26 $130P",
       "asset_class": "OPT",
-      "percent": 1.71,
-      "change_pct": -17.69
+      "percent": 1.43,
+      "change_pct": -17.07
     },
     {
-      "symbol": "BB_270115C10",
-      "display": "BB Jan'27 $10C",
-      "asset_class": "OPT",
-      "percent": 2.4,
-      "change_pct": 14.07
+      "symbol": "RDDT",
+      "display": "RDDT",
+      "asset_class": "STK",
+      "percent": 11.11,
+      "change_pct": -6.44
     }
   ],
   "recent_moves": [
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "close",
       "symbol": "UNH_270115C450",
       "display": "UNH Jan'27 $450C",
-      "delta_pp": -1.58,
-      "from_pct": 1.58,
+      "delta_pp": -1.66,
+      "from_pct": 1.66,
       "to_pct": 0.0
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "add",
       "symbol": "UNH",
       "display": "UNH",
-      "delta_pp": 5.4,
-      "from_pct": 6.61,
-      "to_pct": 12.01
+      "delta_pp": 5.66,
+      "from_pct": 6.52,
+      "to_pct": 12.18
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "close",
       "symbol": "UI",
       "display": "UI",
-      "delta_pp": -3.87,
-      "from_pct": 3.87,
+      "delta_pp": -3.56,
+      "from_pct": 3.56,
       "to_pct": 0.0
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "add",
       "symbol": "RDDT",
       "display": "RDDT",
-      "delta_pp": 5.96,
-      "from_pct": 5.84,
-      "to_pct": 11.8
+      "delta_pp": 5.24,
+      "from_pct": 5.87,
+      "to_pct": 11.11
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "close",
       "symbol": "PLTR",
       "display": "PLTR",
-      "delta_pp": -4.76,
-      "from_pct": 4.76,
+      "delta_pp": -4.59,
+      "from_pct": 4.59,
       "to_pct": 0.0
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "close",
       "symbol": "NVO_270115C90",
       "display": "NVO Jan'27 $90C",
-      "delta_pp": -0.09,
-      "from_pct": 0.09,
+      "delta_pp": -0.08,
+      "from_pct": 0.08,
       "to_pct": 0.0
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "close",
       "symbol": "NVO",
       "display": "NVO",
-      "delta_pp": -1.57,
-      "from_pct": 1.57,
+      "delta_pp": -1.5,
+      "from_pct": 1.5,
       "to_pct": 0.0
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "add",
       "symbol": "NVDA",
       "display": "NVDA",
-      "delta_pp": 4.78,
-      "from_pct": 7.36,
-      "to_pct": 12.14
+      "delta_pp": 4.53,
+      "from_pct": 7.7,
+      "to_pct": 12.23
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "open",
       "symbol": "MSTR_260702P130",
       "display": "MSTR Jul'26 $130P",
-      "delta_pp": 1.71,
+      "delta_pp": 1.43,
       "from_pct": 0.0,
-      "to_pct": 1.71
+      "to_pct": 1.43
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "close",
       "symbol": "MSFT",
       "display": "MSFT",
-      "delta_pp": -7.48,
-      "from_pct": 7.48,
+      "delta_pp": -7.36,
+      "from_pct": 7.36,
       "to_pct": 0.0
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "add",
       "symbol": "META",
       "display": "META",
       "delta_pp": 5.77,
-      "from_pct": 8.54,
-      "to_pct": 14.31
+      "from_pct": 8.59,
+      "to_pct": 14.36
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "close",
       "symbol": "LUMN_270115C10",
       "display": "LUMN Jan'27 $10C",
-      "delta_pp": -0.72,
-      "from_pct": 0.72,
+      "delta_pp": -1.2,
+      "from_pct": 1.2,
       "to_pct": 0.0
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "add",
       "symbol": "GOOGL",
       "display": "GOOGL",
-      "delta_pp": 1.18,
-      "from_pct": 20.01,
-      "to_pct": 21.19
+      "delta_pp": 1.12,
+      "from_pct": 20.32,
+      "to_pct": 21.44
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "close",
       "symbol": "FIG",
       "display": "FIG",
-      "delta_pp": -0.32,
-      "from_pct": 0.32,
+      "delta_pp": -0.33,
+      "from_pct": 0.33,
       "to_pct": 0.0
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "close",
       "symbol": "CRM",
       "display": "CRM",
-      "delta_pp": -2.86,
-      "from_pct": 2.86,
+      "delta_pp": -2.74,
+      "from_pct": 2.74,
       "to_pct": 0.0
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "close",
       "symbol": "BMNR",
       "display": "BMNR",
@@ -9333,48 +9341,48 @@
       "to_pct": 0.0
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "open",
       "symbol": "BB_270115C10",
       "display": "BB Jan'27 $10C",
-      "delta_pp": 2.4,
+      "delta_pp": 2.35,
       "from_pct": 0.0,
-      "to_pct": 2.4
+      "to_pct": 2.35
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "close",
       "symbol": "BB",
       "display": "BB",
-      "delta_pp": -1.2,
-      "from_pct": 1.2,
+      "delta_pp": -1.17,
+      "from_pct": 1.17,
       "to_pct": 0.0
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "add",
       "symbol": "AMZN",
       "display": "AMZN",
-      "delta_pp": 5.45,
-      "from_pct": 8.86,
-      "to_pct": 14.31
+      "delta_pp": 5.49,
+      "from_pct": 8.73,
+      "to_pct": 14.22
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "trim",
       "symbol": "AMD",
       "display": "AMD",
-      "delta_pp": -2.57,
-      "from_pct": 12.7,
-      "to_pct": 10.13
+      "delta_pp": -1.82,
+      "from_pct": 12.49,
+      "to_pct": 10.67
     },
     {
-      "date": "2026-06-12",
+      "date": "2026-06-15",
       "type": "close",
       "symbol": "AAPL",
       "display": "AAPL",
-      "delta_pp": -4.91,
-      "from_pct": 4.91,
+      "delta_pp": -4.87,
+      "from_pct": 4.87,
       "to_pct": 0.0
     }
   ]
