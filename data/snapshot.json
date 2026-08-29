@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-08-28",
+  "updated_at": "2026-08-29",
   "inception_date": "2022-01-05",
   "nav": {
     "leverage": 4.48
@@ -9575,6 +9575,10 @@
         {
           "date": "2026-08-27",
           "return_pct": 64.63
+        },
+        {
+          "date": "2026-08-28",
+          "return_pct": 64.26
         }
       ]
     }
@@ -9604,67 +9608,49 @@
   ],
   "recent_moves": [
     {
-      "date": "2026-08-28",
+      "date": "2026-08-29",
       "type": "trim",
       "symbol": "RDDT",
       "display": "RDDT",
-      "delta_pp": -2.23,
-      "from_pct": 14.54,
+      "delta_pp": -2.31,
+      "from_pct": 14.62,
       "to_pct": 12.31
     },
     {
-      "date": "2026-08-28",
+      "date": "2026-08-29",
       "type": "add",
       "symbol": "NVDA",
       "display": "NVDA",
-      "delta_pp": 1.98,
-      "from_pct": 13.87,
+      "delta_pp": 1.81,
+      "from_pct": 14.04,
       "to_pct": 15.85
     },
     {
-      "date": "2026-08-28",
+      "date": "2026-08-29",
       "type": "close",
       "symbol": "MSTR_260731C102",
       "display": "MSTR Jul'26 $102C",
-      "delta_pp": -0.46,
-      "from_pct": 0.46,
+      "delta_pp": -0.25,
+      "from_pct": 0.25,
       "to_pct": 0.0
     },
     {
-      "date": "2026-08-28",
+      "date": "2026-08-29",
       "type": "trim",
       "symbol": "META",
       "display": "META",
-      "delta_pp": -0.93,
-      "from_pct": 17.81,
+      "delta_pp": -1.09,
+      "from_pct": 17.97,
       "to_pct": 16.88
     },
     {
-      "date": "2026-08-28",
-      "type": "add",
-      "symbol": "GOOGL",
-      "display": "GOOGL",
-      "delta_pp": 0.65,
-      "from_pct": 23.04,
-      "to_pct": 23.69
-    },
-    {
-      "date": "2026-08-28",
+      "date": "2026-08-29",
       "type": "add",
       "symbol": "AMZN",
       "display": "AMZN",
-      "delta_pp": 1.49,
-      "from_pct": 16.33,
+      "delta_pp": 1.37,
+      "from_pct": 16.45,
       "to_pct": 17.82
-    },
-    {
-      "date": "2026-08-28",
-      "type": "trim",
-      "symbol": "AMD",
-      "display": "AMD",
-      "delta_pp": -0.62,
-      "from_pct": 12.22,
-      "to_pct": 11.6
     }
   ]
 }
