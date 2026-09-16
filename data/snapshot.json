@@ -1,59 +1,59 @@
 {
   "version": 1,
-  "updated_at": "2026-09-15",
+  "updated_at": "2026-09-16",
   "inception_date": "2022-01-05",
   "nav": {
-    "leverage": 4.23
+    "leverage": 4.25
   },
   "holdings": [
     {
       "symbol": "GOOGL",
       "display": "GOOGL",
       "asset_class": "STK",
-      "percent": 23.74,
-      "price": 349.39
+      "percent": 23.52,
+      "price": 344.98
     },
     {
       "symbol": "META",
       "display": "META",
       "asset_class": "STK",
-      "percent": 19.22,
-      "price": 665.6
+      "percent": 19.42,
+      "price": 670.24
     },
     {
       "symbol": "AMZN",
       "display": "AMZN",
       "asset_class": "STK",
-      "percent": 17.23,
-      "price": 253.54
+      "percent": 16.94,
+      "price": 248.42
     },
     {
       "symbol": "NVDA",
       "display": "NVDA",
       "asset_class": "STK",
-      "percent": 14.33,
-      "price": 210.96
+      "percent": 14.47,
+      "price": 212.17
     },
     {
       "symbol": "RDDT",
       "display": "RDDT",
       "asset_class": "STK",
-      "percent": 12.69,
-      "price": 162.38
+      "percent": 12.52,
+      "price": 159.63
     },
     {
       "symbol": "AMD",
       "display": "AMD",
       "asset_class": "STK",
-      "percent": 11.73,
-      "price": 493.41
+      "percent": 12.03,
+      "price": 504.2
     },
     {
       "symbol": "BB_270115C10",
       "display": "BB Jan'27 $10C",
       "asset_class": "OPT",
-      "percent": 1.06,
-      "price": 62.5,
+      "percent": 1.09,
+      "price": 63.99,
       "option": {
         "underlying": "BB",
         "expiry": "2027-01-15",
@@ -4959,6 +4959,10 @@
       {
         "date": "2026-09-14",
         "return_pct": 156.99
+      },
+      {
+        "date": "2026-09-15",
+        "return_pct": 155.23
       }
     ],
     "benchmark": {
@@ -9671,62 +9675,60 @@
         {
           "date": "2026-09-15",
           "return_pct": 61.7
+        },
+        {
+          "date": "2026-09-16",
+          "return_pct": 60.99
         }
       ]
     }
   },
-  "big_movers": [
-    {
-      "symbol": "BB_270115C10",
-      "display": "BB Jan'27 $10C",
-      "asset_class": "OPT",
-      "percent": 1.06,
-      "change_pct": 11.61
-    },
-    {
-      "symbol": "GOOGL",
-      "display": "GOOGL",
-      "asset_class": "STK",
-      "percent": 23.74,
-      "change_pct": 5.05
-    }
-  ],
+  "big_movers": [],
   "recent_moves": [
     {
-      "date": "2026-09-15",
+      "date": "2026-09-16",
       "type": "trim",
-      "symbol": "NVDA",
-      "display": "NVDA",
-      "delta_pp": -0.92,
-      "from_pct": 15.25,
-      "to_pct": 14.33
+      "symbol": "RDDT",
+      "display": "RDDT",
+      "delta_pp": -1.09,
+      "from_pct": 13.61,
+      "to_pct": 12.52
     },
     {
-      "date": "2026-09-15",
+      "date": "2026-09-16",
       "type": "add",
       "symbol": "META",
       "display": "META",
-      "delta_pp": 2.1,
-      "from_pct": 17.12,
-      "to_pct": 19.22
+      "delta_pp": 2.76,
+      "from_pct": 16.66,
+      "to_pct": 19.42
     },
     {
-      "date": "2026-09-15",
+      "date": "2026-09-16",
+      "type": "add",
+      "symbol": "GOOGL",
+      "display": "GOOGL",
+      "delta_pp": 0.54,
+      "from_pct": 22.98,
+      "to_pct": 23.52
+    },
+    {
+      "date": "2026-09-16",
       "type": "trim",
       "symbol": "BB_270115C10",
       "display": "BB Jan'27 $10C",
-      "delta_pp": -1.43,
-      "from_pct": 2.49,
-      "to_pct": 1.06
+      "delta_pp": -1.28,
+      "from_pct": 2.37,
+      "to_pct": 1.09
     },
     {
-      "date": "2026-09-15",
+      "date": "2026-09-16",
       "type": "trim",
       "symbol": "AMZN",
       "display": "AMZN",
-      "delta_pp": -0.72,
-      "from_pct": 17.95,
-      "to_pct": 17.23
+      "delta_pp": -0.51,
+      "from_pct": 17.45,
+      "to_pct": 16.94
     }
   ]
 }
